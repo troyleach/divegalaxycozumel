@@ -1,0 +1,16 @@
+$dark-color: #002B51;
+body{
+    font-size: 1.1em;
+    margin: 0;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    background: url(/images/bg_galaxy_underwater.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: $dark-color; 
+}
+
+.test {
+  border: 1px solid red;
+}
+
+
