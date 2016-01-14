@@ -1,4 +1,6 @@
 $dark-color: #002B51;
+$design-borders: 1px solid red;
+
 body{
     font-size: 1.1em;
     margin: 0;
@@ -10,7 +12,6 @@ body{
 }
 
 .test {
-  border: 1px solid red;
+  border: $design-borders;
 }
-
 
