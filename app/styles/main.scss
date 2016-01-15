@@ -1,17 +1,19 @@
 $dark-color: #002B51;
-$design-borders: 1px solid red;
+$design-borders: 1px solid green;
 
 body{
     font-size: 1.1em;
     margin: 0;
+    min-height: 800px;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     background: url(/images/bg_galaxy_underwater.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: $dark-color; 
+    background-size: 100% 100%;
+    background-color: $dark-color !important; 
 }
 
 .test {
   border: $design-borders;
 }
+
 
