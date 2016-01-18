@@ -2,6 +2,7 @@
   "name": "angular-gulp-bower",
   "version": "0.0.0",
   "dependencies": {
+    "bower": "latest",
     "gulp-print": "^1.1.0"
   },
   "devDependencies": {
