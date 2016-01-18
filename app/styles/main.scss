@@ -1,19 +1,285 @@
 $dark-color: #002B51;
-$design-borders: 1px solid green;
-
-body{
-    font-size: 1.1em;
-    margin: 0;
-    min-height: 800px;
-    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    background: url(/images/bg_galaxy_underwater.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-color: $dark-color !important; 
-}
+$font-family-grand-title: "Times New Roman", "Times New Roman", "Times", serif;
+$font-grand-title-color:  #005792;
+$body-font-color: #2d2d2d;
+$design-borders: 1px solid #002B51;
+$panel-body-color: #E1E9F0;
+$font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-family-carousel-text: "Comic Sans MS", "Comic Sans MS", cursive;
 
 .test {
   border: $design-borders;
 }
 
 
+body{
+    margin: 0;
+    min-height: 800px;
+    background: url('/images/bg_galaxy_underwater.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: $dark-color !important; 
+}
+
+.shadow {
+  box-shadow: 0 4px 5px -4px #232323;
+  -moz-box-shadow: 0 4px 5px -4px #232323;
+  -webkit-box-shadow: 0 4px 5px -4px #232323;
+  
+}
+
+hr.general-line-brake {
+  border-top: 1px solid #999;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.index-panel {
+  width: 100%;
+  font-size: 1.1em;
+  font-family: $font-family;
+  color: $body-font-color;
+  border-radius: 10px;
+  background-color: $panel-body-color;
+  margin: 45px 0 45px 0;
+  // top: 45px;
+  // bottom: 45px;
+}
+
+.style {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+header {
+  border-bottom: $design-borders;
+  height: 80px;
+}
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  top: -40px;
+  z-index: 99;
+}
+
+.brand-image {
+  width: 330px;
+}
+
+// MENU BELOW  - - - - - - - - - - - - - - - - - - - - - - 
+/* nav */
+.nav {
+  position: relative;
+  margin: 35px 0;
+  text-align: right;
+}
+.nav ul {
+  margin: 0;
+  padding: 0;
+}
+.nav li {
+  margin: 0 5px 10px 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+.nav a {
+  padding: 3px 3px;
+  text-decoration: none;
+  color: #999;
+  line-height: 100%;
+}
+.nav a:hover {
+  color: #000;
+}
+.nav .current a {
+  background: #999;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* right nav */
+.nav.right ul {
+  text-align: right;
+}
+
+/* HOME PAGE */
+
+#home-container {
+  text-align: center;
+  width: 940px;
+  margin: 60px auto;
+}
+
+.ssi-logo {
+  padding: 10px;
+}
+
+#about {
+  text-align: justify;
+}
+
+.about-title {
+  font-family: $font-family-grand-title;
+  color: $font-grand-title-color;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 175%;
+}
+
+// CAROUSEL 
+#carousel-example-generic {
+  -webkit-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+}
+
+.carousel-caption {
+  display: none;
+  font-size: 300%;
+  font-family: $font-family-carousel-text;
+  color: $panel-body-color !important;
+}
+
+.carousel-indicators {
+  display: none;
+}
+
+/*CONTENT*/ 
+.content-title {
+  font-size: 150%;
+}
+
+.content-body {
+  text-align: justify;
+  height: 100%
+}
+
+/* FOOTER */
+
+footer {
+  
+}
+
+#footer-container {
+  border-top: 3px solid $font-grand-title-color;
+  padding-top: 10px;
+}
+
+.review-us p{
+  color: #3C7D38;
+  font-style: italic;
+}
+
+.trip-advisor-logo {
+  text-align: center;
+}
+
+.trip-advisor-img {
+  width: 120px;
+}
+
+.reviews p {
+  color: #999;
+  font-style: italic;
+}
+
+
+
+#weather {
+  text-align: center;
+}
+
+#social {
+  padding: 15px;
+}
+
+.social-icon-facebook {
+  color: #3B579D;
+  padding-top: 15px;
+}
+
+.social-icon-twitter {
+  color: #2AAAE0;
+}
+
+.email-us {
+  padding-top: 15px;
+}
+
+.email-us p {
+  margin: 0 0 0;
+}
+
+.copy-right {
+  text-align: center;
+  font-size: 75%;
+}
+
+
+
+
+/* RESPONSIVE MENU */
+@media screen and (max-width: 1200px) {
+  header {
+    text-align: center;
+  }
+/* menu below */  
+  .nav {
+    position: relative;
+    min-height: 40px;
+    margin-top: 0;
+  } 
+  .nav ul {
+    width: 180px;
+    padding: 5px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 1px #aaa;
+    background: #fff url('images/menu_icon.png') no-repeat 10px 11px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+    margin-left: 126px;
+  }
+  .nav li {
+    display: none; /* hide all <li> items */
+    margin: 0;
+  }
+  .nav .current {
+    display: block; /* show only current <li> item */
+  }
+  .nav a {
+    display: block;
+    padding: 5px 5px 5px 32px;
+    text-align: left;
+  }
+  .nav .current a {
+    background: none;
+    color: #666;
+  }
+
+  /* on nav hover */
+  .nav ul:hover {
+    background-image: none;
+  }
+  .nav ul:hover li {
+    display: block;
+    margin: 0 0 5px;
+  }
+  .nav ul:hover .current {
+    background: url(images/icon-check.png) no-repeat 10px 7px;
+  }
+
+  /* right nav */
+  .nav.right ul {
+    text-align: center;
+  }
+
+  #carousel-example-generic {
+    display: none;
+  }
+  
+}

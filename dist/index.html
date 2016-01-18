@@ -10,18 +10,101 @@
 
         
 
-        <link rel="stylesheet" href="styles/main-f4568044.css">
+        <link rel="stylesheet" href="styles/main-11115b7f.css">
+       
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+       
 
         <script src="scripts/modernizr-c1ff1650.js"></script>
     </head>
     <body>
-        <!-- View Place holder -->
-        <div ng-view=""></div>
+    <script src="scripts/vendor-8a1d5f65.js"></script>
 
-        <script src="scripts/vendor-8a1d5f65.js"></script>
-
-        <!-- Any include make it between the build comments below -->
-        <script src="scripts/main-485407a1.js"></script>
+    <!-- Any include make it between the build comments below -->
+    <script src="scripts/main-485407a1.js"></script>
+    <script>
+    // Load this when the DOM is ready
+    $(function(){
+      // You used .myCarousel here. 
+      // That's the class selector not the id selector,
+      // which is #myCarousel
+      $('#myCarousel').carousel();
+    });
+    </script>
+      <div class="row index-container">
+        <div class="col-md-10 col-md-offset-1  index-panel">
+          <header class='shadow'>
+            <div class="row">
+              <div class="image-container col-md-4">
+                <a class="logo-link" href="#/page1">
+                  <img class="brand-image" alt="Brand" src="images/logo_original.png">
+                </a>
+              </div>
+              <nav class="nav right col-md-8">
+                <ul>
+                  <li class="current"><a href="#">Home</a></li>
+                  <li class="menu-btn"><a href="#">Scuba Diving</a></li>
+                  <li class="menu-btn"><a href="#">Courses & Rates</a></li>
+                  <li class="menu-btn"><a href="#">Reef Map</a></li>
+                  <li class="menu-btn"><a href="#">About Cozumel</a></li>
+                  <li class="menu-btn"><a href="#">Gallery</a></li>
+                  <li class="menu-btn"><a href="#">Book My Diving</a></li>
+                </ul>
+              </nav>
+              </div>
+          </header>
+          <div ng-view=""></div>
+          <footer>
+            <div id="footer-container">
+              <div class="row">
+                <div id="reviews" class="col-md-4">
+                  <div class="">
+                    <p>Review us at...</p>
+                  </div>
+                  <div>
+                    <img class="trip-advisor-img" src="images/TripAdvisor-logo-t.png" alt="">
+                  </div>
+                  <div>
+                    <p>Latest review</p>
+                  </div>
+                  <div>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur
+                    </p>
+                  </div>
+                </div>
+                <div id="weather" class="col-md-4">
+                  <img src="images/weather.png" alt="weather" height="150px">
+                </div>
+                <div id="social" class="col-md-4">
+                  <div class="social-icon-facebook">
+                    <i class="fa fa-2x fa-facebook-square"></i>
+                    <a href="https://www.facebook.com/DiveGalaxSeaCozumel">
+                      &nbsp;&nbsp;&nbsp;Facebook
+                    </a>
+                    <hr class="social-icon-line">
+                  </div>
+                  <div class="social-icon-twitter">
+                    <i class="fa fa-2x fa-twitter-square"></i>
+                    <a href="https://twitter.com/divegalaxsea">
+                      &nbsp;&nbsp;&nbsp;Twitter
+                    </a>
+                    <hr class="social-icon-line">
+                    
+                  </div>
+                  <div class="email-us">
+                    <p>Have a quick question?</p>
+                    <a href="mailto:scubakimrz@gmail.com">Contact us!</a>
+                    <p>Ready to go diving?</p>
+                    <a href="#">Book Your Diving</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="social-icon-line">
+            <div class="copy-right">copyright diveGalaxsea 2016 <span class="pull-right">site by:<a href="http://www.troyleach.com">&nbsp;&nbsp;&nbsp;Troyleach</a></span> </div>
+          </footer>
+        </div>
+      </div>
 
     </body>
 </html>

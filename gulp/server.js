@@ -30,7 +30,8 @@ function browserSyncInit(baseDir, files, browser) {
       baseDir: baseDir,
       middleware: proxyMiddleware
     },
-    browser: browser
+    browser: browser,
+    notify: false
   });
 
 }
