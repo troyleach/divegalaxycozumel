@@ -35,7 +35,7 @@
     "wiredep": "^1.4.3"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.1"
   },
   "scripts": {
     "prestart": "npm install & bower install",
