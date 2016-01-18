@@ -1,10 +1,11 @@
 /*
  * Directives
  */
-'use strict';
-var directiveModule = angular.module('myApp.directives', []);
+(function() {
+    'use strict';
+    var directiveModule = angular.module('myApp.directives', []);
 
-directiveModule.directive('sampleDirective', ['$scope', function($scope) {
+    directiveModule.directive('sampleDirective', ['$scope', function($scope) {
         return {
             restrict: 'E',
             transclude: true,
@@ -20,3 +21,4 @@ directiveModule.directive('sampleDirective', ['$scope', function($scope) {
             templateUrl: ""
         };
     }]);
+})();

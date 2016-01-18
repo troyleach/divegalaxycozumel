@@ -6,10 +6,6 @@ var $ = require('gulp-load-plugins')();
 var saveLicense = require('uglify-save-license');
 var gulp = require('gulp');
 
-// gulp.task('clear', function (done) {
-//     return cache.clearAll(done);
-// });
-
 gulp.task('styles', function () {
   return gulp.src(['app/styles/*.scss','app/styles/*.css'])
     .pipe($.plumber())
@@ -61,11 +57,11 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
 
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
+    .pipe($.imagemin({
       optimizationLevel: 3,
       progressive: true,
       interlaced: true
-    })))
+    }))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size());
 });

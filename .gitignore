@@ -1,7 +1,6 @@
 .DS_Store
 *.log
 node_modules
-build
 *.node
 components
 coverage
@@ -11,5 +10,5 @@ sandbox
 test/out-fixtures/*
 test/watch-*.txt
 gulp.1
-.sass-cache/*
-.tmp/*
+.sass-cache
+.tmp

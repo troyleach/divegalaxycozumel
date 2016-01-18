@@ -1,10 +1,11 @@
 /*
  * Utility
  */
-'use strict';
-var utilityModule = angular.module('myApp.utilityService', []);
+(function() {
+    'use strict';
+    var utilityModule = angular.module('myApp.utilityService', []);
 
-utilityModule.service('utilService', ['$timeout', function(timeout) {
+    utilityModule.service('utilService', ['$timeout', function(timeout) {
 
         this.showLoader = function() {
             timeout(function() {
@@ -19,3 +20,4 @@ utilityModule.service('utilService', ['$timeout', function(timeout) {
         };
 
     }]);
+})();
