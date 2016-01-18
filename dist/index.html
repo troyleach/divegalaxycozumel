@@ -10,7 +10,7 @@
 
         
 
-        <link rel="stylesheet" href="styles/main-11115b7f.css">
+        <link rel="stylesheet" href="styles/main-05d172c9.css">
        
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
        
@@ -35,40 +35,64 @@
         <div class="col-md-10 col-md-offset-1  index-panel">
           <header class='shadow'>
             <div class="row">
-              <div class="image-container col-md-4">
+              <div class="image-container col-md-3">
                 <a class="logo-link" href="#/page1">
                   <img class="brand-image" alt="Brand" src="images/logo_original.png">
                 </a>
               </div>
-              <nav class="nav right col-md-8">
+              <nav class="nav col-md-6">
                 <ul>
                   <li class="current"><a href="#">Home</a></li>
-                  <li class="menu-btn"><a href="#">Scuba Diving</a></li>
-                  <li class="menu-btn"><a href="#">Courses & Rates</a></li>
-                  <li class="menu-btn"><a href="#">Reef Map</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Scuba Diving <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Reef Map</a></li>
+                      <li><a href="#">Current Prices</a></li>
+                    </ul>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Training <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Specialties:</a></li>
+                    </ul>
                   <li class="menu-btn"><a href="#">About Cozumel</a></li>
-                  <li class="menu-btn"><a href="#">Gallery</a></li>
                   <li class="menu-btn"><a href="#">Book My Diving</a></li>
                 </ul>
               </nav>
+              <div class="col-md-3 ssi-logo">
+                <a href="http://www.divessi.com/">
+                  <img src="images/SSI_LOGO_horizontal_207_50.png" alt="SSI logo">
+                </a>
               </div>
+            </div>
           </header>
+          <!-- <div class="ssi-logo pull-right">
+            <a href="http://www.divessi.com/">
+              <img src="images/SSI_LOGO_horizontal_207_50.png" alt="SSI logo">
+            </a>
+          </div> -->
           <div ng-view=""></div>
           <footer>
             <div id="footer-container">
               <div class="row">
                 <div id="reviews" class="col-md-4">
-                  <div class="">
+                  <div class="review-us">
                     <p>Review us at...</p>
                   </div>
-                  <div>
-                    <img class="trip-advisor-img" src="images/TripAdvisor-logo-t.png" alt="">
+                  <div class="trip-advisor-logo">
+                    <a href="#">
+                      <img class="trip-advisor-img" src="images/TripAdvisor-logo-t.png" alt="trip advisor logo">
+                    </a>
                   </div>
-                  <div>
-                    <p>Latest review</p>
+                  <div class="latest-review">
+                    <hr class="general-line-brake">
                   </div>
-                  <div>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur
+                  <div class="reviews">
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. <a href="#">More...</a>
+                    </p>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. <a href="#">More...</a>
                     </p>
                   </div>
                 </div>
@@ -76,31 +100,37 @@
                   <img src="images/weather.png" alt="weather" height="150px">
                 </div>
                 <div id="social" class="col-md-4">
+                  <div>
+                    <a href="http://www.divessi.com/">
+                      <img src="images/SSI_LOGO_horizontal_207_50.png" alt="SSI logo">
+                    </a>
+                  </div>
                   <div class="social-icon-facebook">
                     <i class="fa fa-2x fa-facebook-square"></i>
                     <a href="https://www.facebook.com/DiveGalaxSeaCozumel">
                       &nbsp;&nbsp;&nbsp;Facebook
                     </a>
-                    <hr class="social-icon-line">
+                    <hr class="general-line-brake">
                   </div>
                   <div class="social-icon-twitter">
                     <i class="fa fa-2x fa-twitter-square"></i>
                     <a href="https://twitter.com/divegalaxsea">
                       &nbsp;&nbsp;&nbsp;Twitter
                     </a>
-                    <hr class="social-icon-line">
+                    <hr class="general-line-brake">
                     
                   </div>
                   <div class="email-us">
                     <p>Have a quick question?</p>
                     <a href="mailto:scubakimrz@gmail.com">Contact us!</a>
+                    <br>
                     <p>Ready to go diving?</p>
                     <a href="#">Book Your Diving</a>
                   </div>
                 </div>
               </div>
             </div>
-            <hr class="social-icon-line">
+            <hr class="general-line-brake">
             <div class="copy-right">copyright diveGalaxsea 2016 <span class="pull-right">site by:<a href="http://www.troyleach.com">&nbsp;&nbsp;&nbsp;Troyleach</a></span> </div>
           </footer>
         </div>

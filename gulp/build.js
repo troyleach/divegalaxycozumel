@@ -6,6 +6,10 @@ var $ = require('gulp-load-plugins')();
 var saveLicense = require('uglify-save-license');
 var gulp = require('gulp');
 
+// gulp.task('clear', function (done) {
+//     return cache.clearAll(done);
+// });
+
 gulp.task('styles', function () {
   return gulp.src(['app/styles/*.scss','app/styles/*.css'])
     .pipe($.plumber())
