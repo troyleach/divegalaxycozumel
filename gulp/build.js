@@ -29,7 +29,7 @@ gulp.task('partials', function () {
       spare: true,
       quotes: true
     }))
-    .pipe(gulp.dest(".tmp/partials"))
+    .pipe(gulp.dest("dist/partials"))
     .pipe($.size());
 });
 
