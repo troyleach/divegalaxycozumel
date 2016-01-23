@@ -22,4 +22,4 @@ bower_components/
 *.css.map
 build/
 dist/
-maps/
+maps/node_modules
