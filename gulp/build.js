@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var saveLicense = require('uglify-save-license');
 var gulp = require('gulp');
+var clean = require('gulp-clean');
 
 gulp.task('styles', function () {
   return gulp.src(['app/styles/*.scss','app/styles/*.css'])
