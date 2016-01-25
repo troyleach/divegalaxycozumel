@@ -7,6 +7,10 @@ var saveLicense = require('uglify-save-license');
 var gulp = require('gulp');
 var clean = require('gulp-clean');
 
+var config = {
+    bowerDir: 'app/bower_components'
+}
+
 gulp.task('styles', function () {
   return gulp.src(['app/styles/*.scss','app/styles/*.css'])
     .pipe($.plumber())
@@ -32,6 +36,11 @@ gulp.task('partials', function () {
     }))
     .pipe(gulp.dest("dist/partials"))
     .pipe($.size());
+});
+
+gulp.task('icons', function() {
+    return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('html', ['styles', 'scripts', 'partials'], function () {
@@ -79,4 +88,4 @@ gulp.task('clean', function () {
   return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'partials', 'images']);
+gulp.task('build', ['html', 'partials', 'images', 'icons']);
