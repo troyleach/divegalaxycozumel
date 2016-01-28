@@ -2,19 +2,23 @@
   border: 1px solid #002B51;
 }
 
+a span {
+  color: #BD2031;
+}
+
 body {
   margin: 0;
   min-height: 800px;
   background: url("../images/bg_galaxy_underwater.jpg") no-repeat center center fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-color: #002B51 !important;
+  background-color: #0D0C52 !important;
 }
 
 .shadow {
-  box-shadow: 0 4px 5px -4px #232323;
-  -moz-box-shadow: 0 4px 5px -4px #232323;
-  -webkit-box-shadow: 0 4px 5px -4px #232323;
+  box-shadow: 0 4px 5px -4px #AED8F2;
+  -moz-box-shadow: 0 4px 5px -4px #AED8F2;
+  -webkit-box-shadow: 0 4px 5px -4px #AED8F2;
 }
 
 hr.general-line-brake {
@@ -27,73 +31,105 @@ hr.general-line-brake {
   width: 100%;
   font-size: 1.1em;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #2d2d2d;
+  color: #999;
   border-radius: 10px;
-  background-color: #E1E9F0;
+  background-color: #0D0C52;
   margin: 45px 0 45px 0;
+  opacity: 0.8;
 }
 
 .style {
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
+  background-image: linear-gradient(to right, transparent, #9bcaf2, transparent);
 }
 
 header {
-  border-bottom: 1px solid #002B51;
   height: 80px;
-}
-
-.image-container {
-  display: inline-block;
-  position: relative;
-  top: -40px;
-  z-index: 99;
 }
 
 .brand-image {
   width: 330px;
+  margin-top: 10px;
 }
 
 /* nav */
-.nav {
-  position: relative;
-  margin: 35px 0;
-  text-align: right;
+.main-navigation {
+  margin-top: 25px;
 }
 
-.nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-.nav li {
-  margin: 0 5px 10px 0;
-  padding: 0;
+ul {
   list-style: none;
-  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 
-.nav a {
-  padding: 3px 3px;
+ul li {
+  display: block;
+  position: relative;
+  float: left;
+}
+
+/* This hides the dropdowns */
+li ul {
+  display: none;
+}
+
+ul li a {
+  display: block;
+  padding: 5px;
   text-decoration: none;
-  color: #999;
-  line-height: 100%;
+  white-space: nowrap;
+  color: #9BCAF2;
 }
 
-.nav a:hover {
-  color: #000;
+ul li a:hover {
+  background: #9BCAF2;
+  color: #000C0B;
 }
 
-.nav .current a {
-  background: #999;
-  color: #fff;
-  border-radius: 5px;
+/* Display the dropdown */
+li:hover > ul {
+  display: block;
+  position: absolute;
 }
 
-/* right nav */
-.nav.right ul {
-  text-align: right;
+li:hover li {
+  float: none;
+}
+
+li:hover a {
+  background: #9BCAF2;
+  color: #000C0B;
+}
+
+li:hover li a:hover {
+  background: #9BCAF2;
+  color: #000C0B;
+}
+
+.main-navigation li ul li {
+  border-top: 0;
+  z-index: 1000;
+}
+
+/* Displays second level dropdowns to the right of the first level dropdown */
+ul ul ul {
+  left: 100%;
+  top: 0;
+}
+
+/* Simple clearfix */
+ul:before,
+ul:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+ul:after {
+  clear: both;
 }
 
 /* HOME PAGE */
@@ -104,6 +140,7 @@ header {
 }
 
 .ssi-logo {
+  height: 65px;
   padding: 10px;
 }
 
@@ -113,7 +150,7 @@ header {
 
 .about-title {
   font-family: "Times New Roman", "Times New Roman", "Times", serif;
-  color: #005792;
+  color: #9BCAF2;
   text-align: center;
   margin-top: 30px;
   font-size: 175%;
@@ -136,17 +173,19 @@ header {
 
 /*CONTENT*/
 .content-title {
+  color: #9BCAF2;
   font-size: 150%;
 }
 
 .content-body {
   text-align: justify;
   height: 100%;
+  color: #fff;
 }
 
 /* FOOTER */
 #footer-container {
-  border-top: 3px solid #005792;
+  border-top: 3px solid #9BCAF2;
   padding-top: 10px;
 }
 
@@ -160,7 +199,7 @@ header {
 }
 
 .trip-advisor-img {
-  width: 120px;
+  height: 50px;
 }
 
 .reviews p {
@@ -174,6 +213,11 @@ header {
 
 #social {
   padding: 15px;
+}
+
+.nitrox-logo {
+  width: 65px;
+  margin-left: 25%;
 }
 
 .social-icon-facebook {
@@ -205,64 +249,6 @@ header {
   }
 
   /* menu below */
-  .nav {
-    position: relative;
-    min-height: 40px;
-    margin-top: 0;
-  }
-
-  .nav ul {
-    width: 180px;
-    padding: 5px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: solid 1px #aaa;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    margin-left: 126px;
-  }
-
-  .nav li {
-    display: none;
-    /* hide all <li> items */
-    margin: 0;
-  }
-
-  .nav .current {
-    display: block;
-    /* show only current <li> item */
-  }
-
-  .nav a {
-    display: block;
-    padding: 5px 5px 5px 32px;
-    text-align: left;
-  }
-
-  .nav .current a {
-    background: none;
-    color: #666;
-  }
-
-  /* on nav hover */
-  .nav ul:hover {
-    background-image: none;
-  }
-
-  .nav ul:hover li {
-    display: block;
-    margin: 0 0 5px;
-  }
-
-  /* right nav */
-  .nav.right ul {
-    text-align: center;
-  }
-
-  #carousel-example-generic {
-    display: none;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
