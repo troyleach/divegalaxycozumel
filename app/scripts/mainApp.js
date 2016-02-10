@@ -14,6 +14,12 @@
         controller: 'sampleCtrl'
       });
       
+      // Current Pricing for diving 
+      $routeProvider.when('/current_pricing', {
+        templateUrl: 'partials/current_pricing.html',
+        controller: 'CurrentPricingCtrl'
+      });
+      
       // Default
       $routeProvider.otherwise({
         redirectTo: '/page1'
