@@ -1,3 +1,6 @@
+
+// menu below
+
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 #cssmenu,
 #cssmenu ul,
@@ -12,10 +15,10 @@
   display: block;
   position: relative;
   z-index: 1;
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 #cssmenu:after,
 #cssmenu > ul:after {
   content: ".";
@@ -25,37 +28,30 @@
   line-height: 0;
   height: 0;
 }
-
 #cssmenu #menu-button {
   display: none;
 }
-
 #cssmenu {
   font-family: Montserrat, sans-serif;
+  // background: #333333;
 }
-
 #cssmenu > ul > li {
   float: left;
 }
-
 #cssmenu.align-center > ul {
   font-size: 0;
   text-align: center;
 }
-
 #cssmenu.align-center > ul > li {
   display: inline-block;
   float: none;
 }
-
 #cssmenu.align-center ul ul {
   text-align: left;
 }
-
 #cssmenu.align-right > ul > li {
   float: right;
 }
-
 #cssmenu > ul > li > a {
   padding: 17px 10px 17px 0px;
   font-size: 80%;
@@ -65,15 +61,12 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-
 #cssmenu > ul > li:hover > a {
   color: #ffffff;
 }
-
 #cssmenu > ul > li.has-sub > a {
   padding-right: 30px;
 }
-
 #cssmenu > ul > li.has-sub > a:after {
   position: absolute;
   top: 22px;
@@ -84,7 +77,6 @@
   background: #dddddd;
   content: '';
 }
-
 #cssmenu > ul > li.has-sub > a:before {
   position: absolute;
   top: 19px;
@@ -94,51 +86,49 @@
   height: 8px;
   background: #dddddd;
   content: '';
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
   transition: all .25s ease;
 }
-
 #cssmenu > ul > li.has-sub:hover > a:before {
   top: 23px;
   height: 0;
 }
-
 #cssmenu ul ul {
   position: absolute;
   left: -9999px;
 }
-
 #cssmenu.align-right ul ul {
   text-align: right;
 }
-
 #cssmenu ul ul li {
   height: 0;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
   transition: all .25s ease;
 }
-
 #cssmenu li:hover > ul {
   left: auto;
 }
-
 #cssmenu.align-right li:hover > ul {
   left: auto;
   right: 0;
 }
-
 #cssmenu li:hover > ul > li {
   height: 35px;
 }
-
 #cssmenu ul ul ul {
   margin-left: 100%;
   top: 0;
 }
-
 #cssmenu.align-right ul ul ul {
   margin-left: 0;
   margin-right: 100%;
 }
-
 #cssmenu ul ul li a {
   border-bottom: 1px solid rgba(150, 150, 150, 0.15);
   padding: 11px 15px;
@@ -149,17 +139,14 @@
   font-weight: 400;
   background: #333333;
 }
-
 #cssmenu ul ul li:last-child > a,
 #cssmenu ul ul li.last-item > a {
   border-bottom: 0;
 }
-
 #cssmenu ul ul li:hover > a,
 #cssmenu ul ul li a:hover {
   color: #ffffff;
 }
-
 #cssmenu ul ul li.has-sub > a:after {
   position: absolute;
   top: 16px;
@@ -170,12 +157,10 @@
   background: #dddddd;
   content: '';
 }
-
 #cssmenu.align-right ul ul li.has-sub > a:after {
   right: auto;
   left: 11px;
 }
-
 #cssmenu ul ul li.has-sub > a:before {
   position: absolute;
   top: 13px;
@@ -185,14 +170,16 @@
   height: 8px;
   background: #dddddd;
   content: '';
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
   transition: all .25s ease;
 }
-
 #cssmenu.align-right ul ul li.has-sub > a:before {
   right: auto;
   left: 14px;
 }
-
 #cssmenu ul ul > li.has-sub:hover > a:before {
   top: 17px;
   height: 0;
@@ -202,59 +189,49 @@
   padding-left: 150 !important;
 }
 
+
 @media all and (max-width: 850px) {
   #cssmenu {
     width: 100%;
-    background: #0D0C52;
+    background: $dark-color;
   }
-
   #cssmenu ul {
     width: 100%;
     display: none;
   }
-
   #cssmenu.align-center > ul {
     text-align: left;
   }
-
   #cssmenu ul li {
     width: 100%;
     border-top: 1px solid rgba(120, 120, 120, 0.2);
   }
-
   #cssmenu ul ul li,
   #cssmenu li:hover > ul > li {
     height: auto;
   }
-
   #cssmenu ul li a,
   #cssmenu ul ul li a {
     width: 100%;
     border-bottom: 0;
   }
-
   #cssmenu > ul > li {
     float: none;
   }
-
   #cssmenu ul ul li a {
     padding-left: 25px;
   }
-
   #cssmenu ul ul ul li a {
     padding-left: 35px;
   }
-
   #cssmenu ul ul li a {
     color: #dddddd;
     background: none;
   }
-
   #cssmenu ul ul li:hover > a,
   #cssmenu ul ul li.active > a {
     color: #ffffff;
   }
-
   #cssmenu ul ul,
   #cssmenu ul ul ul,
   #cssmenu.align-right ul ul {
@@ -264,14 +241,12 @@
     margin: 0;
     text-align: left;
   }
-
   #cssmenu > ul > li.has-sub > a:after,
   #cssmenu > ul > li.has-sub > a:before,
   #cssmenu ul ul > li.has-sub > a:after,
   #cssmenu ul ul > li.has-sub > a:before {
     display: none;
   }
-
   #cssmenu #menu-button {
     display: block;
     padding: 17px 0px 17px 10px;
@@ -281,7 +256,6 @@
     text-transform: uppercase;
     font-weight: 700;
   }
-
   #cssmenu #menu-button:after {
     position: absolute;
     top: 22px;
@@ -293,7 +267,6 @@
     border-bottom: 2px solid #dddddd;
     content: '';
   }
-
   #cssmenu #menu-button:before {
     position: absolute;
     top: 16px;
@@ -304,7 +277,6 @@
     background: #dddddd;
     content: '';
   }
-
   #cssmenu #menu-button.menu-opened:after {
     top: 23px;
     border: 0;
@@ -312,17 +284,21 @@
     width: 15px;
     background: #ffffff;
     -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-
   #cssmenu #menu-button.menu-opened:before {
     top: 23px;
     background: #ffffff;
     width: 15px;
     -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
-
   #cssmenu .submenu-button {
     position: absolute;
     z-index: 99;
@@ -334,16 +310,13 @@
     width: 46px;
     cursor: pointer;
   }
-
   #cssmenu .submenu-button.submenu-opened {
     background: #262626;
   }
-
   #cssmenu ul ul .submenu-button {
     height: 34px;
     width: 34px;
   }
-
   #cssmenu .submenu-button:after {
     position: absolute;
     top: 22px;
@@ -354,16 +327,13 @@
     background: #dddddd;
     content: '';
   }
-
   #cssmenu ul ul .submenu-button:after {
     top: 15px;
     right: 13px;
   }
-
   #cssmenu .submenu-button.submenu-opened:after {
     background: #ffffff;
   }
-
   #cssmenu .submenu-button:before {
     position: absolute;
     top: 19px;
@@ -374,209 +344,12 @@
     background: #dddddd;
     content: '';
   }
-
   #cssmenu ul ul .submenu-button:before {
     top: 12px;
     right: 16px;
   }
-
   #cssmenu .submenu-button.submenu-opened:before {
     display: none;
   }
 }
-#page-container {
-  height: 400px;
-}
 
-.test {
-  border: 1px solid #002B51;
-}
-
-a span {
-  color: #BD2031;
-}
-
-body {
-  margin: 0;
-  min-height: 800px;
-  background: url("../images/bg_galaxy_underwater.jpg") no-repeat center center fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-color: #0D0C52 !important;
-}
-
-.shadow {
-  box-shadow: 0 4px 5px -4px #AED8F2;
-  -moz-box-shadow: 0 4px 5px -4px #AED8F2;
-  -webkit-box-shadow: 0 4px 5px -4px #AED8F2;
-}
-
-hr.general-line-brake {
-  border-top: 1px solid #999;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.index-panel {
-  width: 100%;
-  font-size: 1.1em;
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #999;
-  border-radius: 10px;
-  background-color: #0D0C52;
-  margin: 45px 0 45px 0;
-  opacity: 0.8;
-}
-
-.style {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, transparent, #9bcaf2, transparent);
-}
-
-.brand-image {
-  width: 330px;
-  margin-top: 10px;
-}
-
-/* HOME PAGE */
-#home-container {
-  text-align: center;
-  width: 940px;
-  margin: 15px auto;
-  padding: 0 15px 0 15px;
-}
-
-.ssi-logo {
-  height: 65px;
-  padding: 10px;
-}
-
-#about {
-  text-align: justify;
-}
-
-.about-title {
-  font-family: "Times New Roman", "Times New Roman", "Times", serif;
-  color: #9BCAF2;
-  text-align: center;
-  font-size: 175%;
-}
-
-#carousel-example-generic {
-  box-shadow: 10px 10px 28px -10px rgba(0, 0, 0, 0.75);
-}
-
-.carousel-caption {
-  display: none;
-  font-size: 300%;
-  font-family: "Comic Sans MS", "Comic Sans MS", cursive;
-  color: #E1E9F0 !important;
-}
-
-.carousel-indicators {
-  display: none;
-}
-
-/*CONTENT*/
-.content-title {
-  color: #9BCAF2;
-  font-size: 145%;
-  padding-top: 25px;
-}
-
-.content-body {
-  text-align: justify;
-  height: 100%;
-  color: #999;
-}
-
-/* FOOTER */
-#footer-container {
-  border-top: 3px solid #9BCAF2;
-  padding-top: 10px;
-}
-
-.review-us p {
-  color: #3C7D38;
-  font-style: italic;
-}
-
-.trip-advisor-logo {
-  text-align: center;
-}
-
-.trip-advisor-img {
-  height: 50px;
-}
-
-.reviews p {
-  color: #999;
-  font-style: italic;
-}
-
-#weather {
-  text-align: center;
-}
-
-#social {
-  padding: 15px;
-}
-
-.nitrox-logo {
-  width: 65px;
-}
-
-.social-icon-facebook {
-  color: #3B579D;
-  padding-top: 15px;
-}
-
-.social-icon-twitter {
-  color: #2AAAE0;
-}
-
-.email-us {
-  padding-top: 15px;
-}
-
-.email-us p {
-  margin: 0 0 0;
-}
-
-.copy-right {
-  text-align: center;
-  font-size: 75%;
-}
-
-/* RESPONSIVE MENU */
-@media screen and (max-width: 1100px) {
-  header {
-    text-align: center;
-  }
-
-  .head-ssi-logo {
-    text-align: center;
-  }
-
-  #home-container {
-    width: 100%;
-    line-height: 1.2;
-  }
-
-  .carousel-inner {
-    display: none;
-  }
-
-  #footer-container {
-    padding: 5px 15px 5px 15px;
-  }
-
-  .ssi-nitrox-logos {
-    text-align: center;
-  }
-
-  /* menu below */
-}
-
-/*# sourceMappingURL=main.css.map */

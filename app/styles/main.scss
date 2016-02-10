@@ -1,6 +1,6 @@
 $dark-color: #0D0C52;
 $font-family-grand-title: "Times New Roman", "Times New Roman", "Times", serif;
-$font-grand-title-color:  #9BCAF2;
+$font-grand-title-color: #9BCAF2;
 $body-font-color: #999;
 $design-borders: 1px solid #002B51;
 $panel-body-color: #E1E9F0;
@@ -10,6 +10,11 @@ $menu-background-color: #9BCAF2;
 $anchor-tag-color: #BD2031;
 $black-color: #000C0B;
 $white-color: #fff;
+@import "menu";
+
+#page-container {
+  height: 400px;
+}
 
 .test {
   border: $design-borders;
@@ -62,7 +67,6 @@ hr.general-line-brake {
 
 header {
   //border-bottom: $design-borders;
-  height: 80px;
 }
 
 .image-container {
@@ -77,89 +81,15 @@ header {
   margin-top: 10px;
 }
 
-// MENU BELOW  - - - - - - - - - - - - - - - - - - - - - - 
-/* nav */
-.main-navigation {
-  margin-top: 25px;
-}
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
- // background: #E1E9F0;
-}
-
-ul li {
-  display: block;
-  position: relative;
-  float: left;
-  //background: #E1E9F0;
-}
-
-/* This hides the dropdowns */
-
-
-li ul { display: none; }
-
-ul li a {
-  display: block;
-  padding: 5px;
-  text-decoration: none;
-  white-space: nowrap;
-  color: $font-grand-title-color;
-}
-
-ul li a:hover { 
-  background: $menu-background-color;
-  color: $black-color;
-}
-
-/* Display the dropdown */
-
-
-li:hover > ul {
-  display: block;
-  position: absolute;
-}
-
-li:hover li { float: none; }
-
-li:hover a { background: $menu-background-color;
-             color: $black-color;
-           }
-
-li:hover li a:hover { background: $menu-background-color;
-                      color: $black-color;
-                    }
-
-.main-navigation li ul li { border-top: 0;
-                            z-index: 1000; }
-
-/* Displays second level dropdowns to the right of the first level dropdown */
-
-
-ul ul ul {
-  left: 100%;
-  top: 0;
-}
-
-/* Simple clearfix */
-
-ul:before,
-ul:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-ul:after { clear: both; }
 
 /* HOME PAGE */
 
 #home-container {
   text-align: center;
   width: 940px;
-  margin: 60px auto;
+  margin: 15px auto;
+  padding: 0 15px 0 15px;
 }
 
 .ssi-logo {
@@ -175,7 +105,6 @@ ul:after { clear: both; }
   font-family: $font-family-grand-title;
   color: $font-grand-title-color;
   text-align: center;
-  margin-top: 30px;
   font-size: 175%;
 }
 
@@ -200,13 +129,14 @@ ul:after { clear: both; }
 /*CONTENT*/ 
 .content-title {
   color: $font-grand-title-color;
-  font-size: 150%;
+  font-size: 145%;
+  padding-top: 25px;
 }
 
 .content-body {
   text-align: justify;
   height: 100%;
-  color: $white-color;
+  color: $body-font-color;
 }
 
 /* FOOTER */
@@ -248,7 +178,6 @@ footer {
 
 .nitrox-logo {
   width: 65px;
-  margin-left: 25%;
 }
 
 .social-icon-facebook {
@@ -277,10 +206,32 @@ footer {
 
 
 /* RESPONSIVE MENU */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
+  
   header {
     text-align: center;
   }
+
+  .head-ssi-logo {
+    text-align: center;
+  }
+
+  #home-container {
+    width: 100%;
+    line-height: 1.2;
+  }
+  
+  .carousel-inner {
+    display: none;
+  }
+   #footer-container {
+    padding: 5px 15px 5px 15px; 
+   }
+   
+   .ssi-nitrox-logos {
+     text-align: center;
+   }
 /* menu below */  
+
   
 }

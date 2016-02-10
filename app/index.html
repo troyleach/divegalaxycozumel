@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-combined.min.css">
 
         <!-- endbuild -->
        
@@ -44,11 +45,13 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/mainApp.js"></script>
     <script src="scripts/controllers/sampleController.js"></script>
+    <script src="scripts/controllers/currentPricingController.js"></script>
     <script src="scripts/services/sampleService.js"></script>
     <script src="scripts/directives/sampleDirective.js"></script>
     <script src="scripts/filters/sampleFilter.js"></script>
     <script src="scripts/utility/constant.js"></script>
     <script src="scripts/utility/util.js"></script>
+    <script src="scripts/utility/menu.js"></script>
     <!-- inject:partials -->
     <!-- endinject -->
     <!-- endbuild -->
@@ -61,60 +64,65 @@
       $('#myCarousel').carousel();
     });
     </script>
-      <div class="row index-container">
+      <div class="index-container">
         <div class="col-md-10 col-md-offset-1  index-panel">
           <header>
             <div class="row">
-              <div class="image-container col-md-3">
+              <div class="image-container col-md-4">
                 <a class="logo-link" href="#/page1">
                   <img class="brand-image" alt="Brand" src="images/logo.png">
                 </a>
               </div>
-              <div class="col-md-9 shadow">  
+              <div class="col-md-8">
                 <div class="row">
-              <nav class="nav col-md-8">
-                <ul class="main-navigation pull-right">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Scuba Diving <i class="fa fa-hand-o-down"></i></a>
-                    <ul>
-                      <li><a href="#">Reef Map</a></li>
-                      <li><a href="#">Current Prices (2-Tank)</a></li>
-                      <li><a href="#">Advanced Adventurer</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Training <i class="fa fa-hand-o-down"></i></a>
-                    <ul>
-                      <li><a href="#">Open Water Diver</a></li>
-                      <li><a href="#">Advanced Open Water Diver</a></li>
-                      <li><a href="#">Advanced Adventurer</a></li>
-                      <li><a href="#">Specialties <i class="fa fa-hand-o-right"></i></a>
-                        <ul>
-                          <li><a href="#">Boat Diving</a></li>
-                          <li><a href="#">Deep Diving</a></li>
-                          <li><a href="#">Enriched Air Nitrox</a></li>
-                          <li><a href="#">Night Diving and Limited Visibility</a></li>
-                          <li><a href="#">Navigation</a></li>
-                          <li><a href="#">Perfect Buoyancy</a></li>
-                          <li><a href="#">Stress & Rescue</a></li>
-                          <li><a href="#">Snorkeling</a></li>
-                          <li><a href="#">Scuba Skills Update</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a href="#">About Cozumel</a></li>
-                  <li><a href="#">Book My Diving</a></li>
-                </ul>
-              </nav>
-              <div class="col-md-4 pull-right">
-                <a href="http://www.divessi.com/">
-                  </span><img class="ssi-logo" src="images/NEW-SSI-LOGO-WHT.png" alt="SSI logo">
-                </a>
-              </div>
-              </div>
-              </div>
-            </div>
+                  <div class="col-md-12 shadow menu-nav-bar"> 
+                    <div id='cssmenu'>
+                      <ul>
+                         <li><a href='#/'>Home</a></li>
+                         <li class='active'><a href=''>Scuba Diving</a>
+                            <ul> 
+                              <li><a href="">Reef Map</a></li>
+                              <li><a href="#/current_pricing">Current Prices (2-Tank)</a></li>
+                              <li><a href="">Advanced Adventurer</a></li>   
+                            </ul>
+                         </li>
+                         <li class='active'><a href=''>Training</i></a>
+                            <ul>
+                               <li><a href="">Open Water Diver</a></li>
+                               <li><a href="">Advanced Open Water Diver</a></li>
+                               <li><a href="">Advanced Adventurer</a></li>
+                               <li><a href="">Specialties</a>
+                                 <ul>
+                                   <li><a href="">Boat Diving</a></li>
+                                   <li><a href="">Deep Diving</a></li>
+                                   <li><a href="">Enriched Air Nitrox</a></li>
+                                   <li><a href="">Night Diving and Limited Visibility</a></li>
+                                   <li><a href="">Navigation</a></li>
+                                   <li><a href="">Perfect Buoyancy</a></li>
+                                   <li><a href="">Stress & Rescue</a></li>
+                                   <li><a href="">Snorkeling</a></li>
+                                   <li><a href="">Scuba Skills Update</a></li>
+                                 </ul>
+                               </li>
+                            </ul>
+                         </li>
+                         <li><a href="">About Cozumel</a></li>
+                         <li><a href="">Book My Diving</a></li>
+                      </ul>
+                    </div><!-- End of cssmenu -->
+                  </div><!-- End of col 12  -->
+                  <div class="col-md-12 pull right">
+                    <div class="pull-right">
+                      <a href="http://www.divessi.com/">
+                        <img class="ssi-logo" src="images/NEW-SSI-LOGO-WHT.png" alt="SSI logo">
+                      </a>
+                    </div>
+                  </div>
+                </div><!-- End of row -->
+              </div><!-- End of shadow -->
+            </div><!-- End of row -->
           </header>
+            
           <!-- <div class="ssi-logo pull-right">
             <a href="http://www.divessi.com/">
               <img src="images/SSI_LOGO_horizontal_207_50.png" alt="SSI logo">
@@ -123,6 +131,8 @@
           <div ng-view=""></div>
           <footer>
             <div id="footer-container">
+            
+            <div class="col-md-12">
               <div class="row">
                 <div id="reviews" class="col-md-4">
                   <div class="review-us">
@@ -147,13 +157,13 @@
                   <img src="images/weather.png" alt="weather" height="150px">
                 </div>
                 <div id="social" class="col-md-4">
-                  <div class="row">
+                  <div class="row ssi-nitrox-logos">
                     <div class="col-md-6">
                       <a href="http://www.divessi.com/">
                         <img class="ssi-logo" src="images/ssi-logo-red-text.png" alt="SSI logo">
                       </a>
                     </div>
-                    <div class="col-md-6 pull-right">
+                    <div class="col-md-6">
                       <img class="nitrox-logo" src="images/nitroxT.png" alt="Nitrox Patch">
                     </div>
                   </div>
@@ -181,12 +191,91 @@
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+             
+            </div><!-- End of footer container -->
             <hr class="general-line-brake">
             <div class="copy-right">copyright diveGalaxsea 2016 <span class="pull-right">site by:<a href="http://www.troyleach.com">&nbsp;&nbsp;&nbsp;Troyleach</a></span> </div>
           </footer>
         </div>
       </div>
+
+      <!-- not sure why I can't put this in a separate file -->
+      <script>
+        (function($) {
+
+          $.fn.menumaker = function(options) {
+              
+              var cssmenu = $(this), settings = $.extend({
+                title: "Menu",
+                format: "dropdown",
+                sticky: false
+              }, options);
+
+              return this.each(function() {
+                cssmenu.prepend('<div id="menu-button">' + settings.title + '</div>');
+                $(this).find("#menu-button").on('click', function(){
+                  $(this).toggleClass('menu-opened');
+                  var mainmenu = $(this).next('ul');
+                  if (mainmenu.hasClass('open')) { 
+                    mainmenu.hide().removeClass('open');
+                  }
+                  else {
+                    mainmenu.show().addClass('open');
+                    if (settings.format === "dropdown") {
+                      mainmenu.find('ul').show();
+                    }
+                  }
+                });
+
+                cssmenu.find('li ul').parent().addClass('has-sub');
+
+                multiTg = function() {
+                  cssmenu.find(".has-sub").prepend('<span class="submenu-button"></span>');
+                  cssmenu.find('.submenu-button').on('click', function() {
+                    $(this).toggleClass('submenu-opened');
+                    if ($(this).siblings('ul').hasClass('open')) {
+                      $(this).siblings('ul').removeClass('open').hide();
+                    }
+                    else {
+                      $(this).siblings('ul').addClass('open').show();
+                    }
+                  });
+                };
+
+                if (settings.format === 'multitoggle') multiTg();
+                else cssmenu.addClass('dropdown');
+
+                if (settings.sticky === true) cssmenu.css('position', 'fixed');
+
+                resizeFix = function() {
+                  if ($( window ).width() > 768) {
+                    cssmenu.find('ul').show();
+                  }
+
+                  if ($(window).width() <= 768) {
+                    cssmenu.find('ul').hide().removeClass('open');
+                  }
+                };
+                resizeFix();
+                return $(window).on('resize', resizeFix);
+
+              });
+          };
+        })(jQuery);
+
+        (function($){
+        $(document).ready(function(){
+
+        $("#cssmenu").menumaker({
+           title: "Menu",
+           format: "multitoggle"
+        });
+
+        });
+        })(jQuery);
+
+      </script>
 
     </body>
 </html>
