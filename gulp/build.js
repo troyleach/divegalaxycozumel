@@ -8,7 +8,8 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 
 var config = {
-    bowerDir: 'app/bower_components'
+    bowerDir: 'app/bower_components',
+    weatherDir: 'app/font'
 }
 
 gulp.task('styles', function () {
@@ -39,6 +40,11 @@ gulp.task('partials', function () {
 });
 
 gulp.task('icons', function() {
+    return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('weatherIcons', function() {
     return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
         .pipe(gulp.dest('dist/fonts'));
 });
@@ -88,4 +94,4 @@ gulp.task('clean', function () {
   return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'partials', 'images', 'icons']);
+gulp.task('build', ['html', 'partials', 'images', 'icons', 'weatherIcons']);

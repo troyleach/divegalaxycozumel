@@ -10,18 +10,21 @@
 
         
 
-        <link rel="stylesheet" href="styles/main-788ed2b4.css">
-       
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-       
+        <link rel="stylesheet" href="styles/main-393235cc.css">
+        
+        
+        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        
 
         <script src="scripts/modernizr-c1ff1650.js"></script>
     </head>
     <body>
-    <script src="scripts/vendor-8a1d5f65.js"></script>
+    <script src="scripts/vendor-ea6c66dd.js"></script>
 
     <!-- Any include make it between the build comments below -->
-    <script src="scripts/main-86c4cf0a.js"></script>
+    <script src="scripts/main-a76dec40.js"></script>
     <script>
     // Load this when the DOM is ready
     $(function(){
@@ -32,52 +35,59 @@
     });
     </script>
       <div class="index-container">
-        <div class="col-md-10 col-md-offset-1  index-panel">
+    
+        <div class="col-md-10 col-md-offset-1 index-panel">
           <header>
             <div class="row">
-              <div class="image-container col-md-4">
-                <a class="logo-link" href="#/page1">
+              <div class="image-container col-sm-4">
+                <a class="logo-link" href="#/home">
                   <img class="brand-image" alt="Brand" src="images/logo.png">
                 </a>
               </div>
-              <div class="col-md-8">
+
+              <div class="col-sm-8">
                 <div class="row">
+
                   <div class="col-md-12 shadow menu-nav-bar"> 
                     <div id='cssmenu'>
                       <ul>
                          <li><a href='#/'>Home</a></li>
-                         <li class='active'><a href=''>Scuba Diving</a>
+                         <li class='active'><a href=''>Diving</a>
                             <ul> 
-                              <li><a href="">Reef Map</a></li>
+                              <li><a href="#/reef_map">Reef Map</a></li>
                               <li><a href="#/current_pricing">Current Prices (2-Tank)</a></li>
                               <li><a href="">Advanced Adventurer</a></li>   
+                            
+                            <li class='active'><a href=''>Training</a>
+                               <ul>
+                                  <li><a href="">Open Water Diver</a></li>
+                                  <li><a href="">Advanced Open Water Diver</a></li>
+                                  <li><a href="">Advanced Adventurer</a></li>
+                                  <li><a href="">Specialties</a>
+                                    <ul>
+                                      <li><a href="">Boat Diving</a></li>
+                                      <li><a href="">Deep Diving</a></li>
+                                      <li><a href="">Enriched Air Nitrox</a></li>
+                                      <li><a href="">Night Diving and Limited Visibility</a></li>
+                                      <li><a href="">Navigation</a></li>
+                                      <li><a href="">Perfect Buoyancy</a></li>
+                                      <li><a href="">Stress & Rescue</a></li>
+                                      <li><a href="">Snorkeling</a></li>
+                                      <li><a href="">Scuba Skills Update</a></li>
+                                    </ul>
+                                  </li>
+                               </ul>
+                            </li>
                             </ul>
                          </li>
-                         <li class='active'><a href=''>Training</i></a>
-                            <ul>
-                               <li><a href="">Open Water Diver</a></li>
-                               <li><a href="">Advanced Open Water Diver</a></li>
-                               <li><a href="">Advanced Adventurer</a></li>
-                               <li><a href="">Specialties</a>
-                                 <ul>
-                                   <li><a href="">Boat Diving</a></li>
-                                   <li><a href="">Deep Diving</a></li>
-                                   <li><a href="">Enriched Air Nitrox</a></li>
-                                   <li><a href="">Night Diving and Limited Visibility</a></li>
-                                   <li><a href="">Navigation</a></li>
-                                   <li><a href="">Perfect Buoyancy</a></li>
-                                   <li><a href="">Stress & Rescue</a></li>
-                                   <li><a href="">Snorkeling</a></li>
-                                   <li><a href="">Scuba Skills Update</a></li>
-                                 </ul>
-                               </li>
-                            </ul>
-                         </li>
-                         <li><a href="">About Cozumel</a></li>
+                         
+                         <li><a href="#/about_cozumel">About Cozumel</a></li>
+                         <li><a href="">Gallery</a></li>
                          <li><a href="">Book My Diving</a></li>
                       </ul>
                     </div><!-- End of cssmenu -->
-                  </div><!-- End of col 12  -->
+                  </div><!-- End of col 12 menu-nav-bar  -->
+
                   <div class="col-md-12 pull right">
                     <div class="pull-right">
                       <a href="http://www.divessi.com/">
@@ -85,24 +95,19 @@
                       </a>
                     </div>
                   </div>
-                </div><!-- End of row -->
-              </div><!-- End of shadow -->
-            </div><!-- End of row -->
+
+                </div><!-- End of inner row -->
+              </div><!-- End of col-sm-8 -->
+            </div><!-- End of outter row -->
           </header>
-            
-          <!-- <div class="ssi-logo pull-right">
-            <a href="http://www.divessi.com/">
-              <img src="images/SSI_LOGO_horizontal_207_50.png" alt="SSI logo">
-            </a>
-          </div> -->
+
           <div ng-view=""></div>
-          <footer>
+
+          <footer ng-controller="IndexCtrl as idx">
             <div id="footer-container">
-            
-            <div class="col-md-12">
-              <div class="row">
-                <div id="reviews" class="col-md-4">
-                  <div class="review-us">
+              <div class="">
+                <div id="" class="col-md-4">
+                  <div class="footer-col-title">
                     <p>Review us at...</p>
                   </div>
                   <div class="trip-advisor-logo">
@@ -113,24 +118,34 @@
                   <div class="latest-review">
                     <hr class="general-line-brake">
                   </div>
-                  <div class="reviews">
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. <a href="#"><span>More...</span></a>
-                    </p>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. <a href="#"><span>More...</span></a>
+                  <div class="reviews" ng-repeat="review in idx.tripAdvisorReview">
+                    <p>
+                      {{review}} <a href="http://www.tripadvisor.com/Attraction_Review-g150809-d3493106-Reviews-Dive_Galaxsea-Cozumel_Yucatan_Peninsula.html" target="_blank"><span>More...</span></a>
                     </p>
                   </div>
                 </div>
+
                 <div id="weather" class="col-md-4">
-                  <img src="images/weather.png" alt="weather" height="150px">
+                  <p class="left-it footer-col-title">{{idx.weatherInCity}}
+                    <button ng-click="idx.toggleTemperature('farenheit')" ng-class="idx.tempScale ? 'btn btn-info btn-sm' : 'btn btn-default btn-sm'"><i class="wi wi-fahrenheit degree-scale"></i></button>
+                    <button type="button" ng-model="celsius" ng-click="idx.toggleTemperature('celsius')" ng-class="idx.tempScale ? 'btn btn-default btn-sm' : 'btn btn-info btn-sm'"><i class="wi wi-celsius degree-scale"></i></button>
+                  </p>
+                  <div ng-if="idx.tempScale">
+                    <div ng-include="'partials/farenheit.html'"></div>
+                  </div>
+                  <div ng-if="!idx.tempScale">
+                      <div ng-include="'partials/celsius.html'"></div>
+                  </div>
                 </div>
+
                 <div id="social" class="col-md-4">
                   <div class="row ssi-nitrox-logos">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                       <a href="http://www.divessi.com/">
                         <img class="ssi-logo" src="images/ssi-logo-red-text.png" alt="SSI logo">
                       </a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <img class="nitrox-logo" src="images/nitroxT.png" alt="Nitrox Patch">
                     </div>
                   </div>
@@ -157,17 +172,17 @@
                       <a href="#"><span>Book Your Diving</span></a>
                   </div>
                 </div>
-              </div>
-              </div>
-             
-            </div><!-- End of footer container -->
-            <hr class="general-line-brake">
-            <div class="copy-right">copyright diveGalaxsea 2016 <span class="pull-right">site by:<a href="http://www.troyleach.com">&nbsp;&nbsp;&nbsp;Troyleach</a></span> </div>
-          </footer>
-        </div>
-      </div>
 
-      <!-- not sure why I can't put this in a separate file -->
+                <div class="copy-right general-line-brake col-md-12">
+                  copyright diveGalaxsea 2016 <span class="pull-right">site by:<a href="http://www.troyleach.com">&nbsp;&nbsp;&nbsp;Troyleach</a></span>
+                </div>
+              </div>
+            </div><!-- End of footer container -->
+          </footer>
+        </div><!-- End of index container -->
+      </div><!-- End of index container -->
+
+      <!-- not sure why I can't put this in a separate file for the menu-->
       <script>
         (function($) {
 

@@ -1,8 +1,10 @@
 $dark-color: #0D0C52;
+$panel-body-color: #5f2c43;
 $font-family-grand-title: "Times New Roman", "Times New Roman", "Times", serif;
 $font-grand-title-color: #9BCAF2;
 $body-font-color: #999;
-$design-borders: 1px solid #002B51;
+$bold-font-color: #5f2c43;
+$design-borders: 1px solid red;
 $panel-body-color: #E1E9F0;
 $font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $font-family-carousel-text: "Comic Sans MS", "Comic Sans MS", cursive;
@@ -10,11 +12,13 @@ $menu-background-color: #9BCAF2;
 $anchor-tag-color: #BD2031;
 $black-color: #000C0B;
 $white-color: #fff;
+$panel-header-color: #9BCAF2;
+$page-title-font-family: 'Lobster', cursive;
+$font-family-rochester: 'Rochester', cursive;
 @import "menu";
+@import "base";
+@import "responsive";
 
-#page-container {
-  height: 400px;
-}
 
 .test {
   border: $design-borders;
@@ -33,14 +37,74 @@ body{
     background-color: $dark-color !important; 
 }
 
+.weather-line-margin {
+  margin: 8px 0 8px 0;
+}
+
+.center-it {
+  text-align: center;
+}
+
+.left-it {
+  text-align: left;
+}
+
+.right-it {
+  text-align: right;
+}
+
+.weather-text {
+  font-size: 80%;
+}
+
+.current-weather-celsius,
+.current-weather-farenheit {
+  font-size: 95%;
+}
+
+.weather-icon-big {
+  color: #f3c56e;
+  font-size: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-shadow: 1px 1px 5px #fcf3e2;
+}
+
+.weather-icon-small {
+  color: #f3c56e;
+  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 5px #fcf3e2;
+}
+
+.degree-scale {
+  font-size: 15px;
+}
+
+.center-table {
+  margin: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.col {
+  padding: 0 5px 0 5px;
+}
+
+.pad-top {
+  padding-top: 15px;
+}
+
 .shadow {
   box-shadow: 0 4px 5px -4px #AED8F2;
   -moz-box-shadow: 0 4px 5px -4px #AED8F2;
   -webkit-box-shadow: 0 4px 5px -4px #AED8F2;
-  
 }
 
-hr.general-line-brake {
+.general-line-brake {
   border-top: 1px solid #999;
   margin-top: 0;
   margin-bottom: 0;
@@ -54,9 +118,19 @@ hr.general-line-brake {
   border-radius: 10px;
   background-color: $dark-color;
   margin: 45px 0 45px 0;
-  opacity: 0.8;
   // top: 45px;
   // bottom: 45px;
+}
+.page-title {
+  color: $bold-font-color;
+}
+
+.panel-body-style {
+  background-color: $panel-body-color !important; 
+}
+.panel-header-style {
+  background-color: #406089;
+  height: 50px;
 }
 
 .style {
@@ -64,6 +138,7 @@ hr.general-line-brake {
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(155, 202, 242, 1), rgba(0, 0, 0, 0));
 }
+
 
 header {
   //border-bottom: $design-borders;
@@ -87,7 +162,7 @@ header {
 
 #home-container {
   text-align: center;
-  width: 940px;
+  width: 100%;
   margin: 15px auto;
   padding: 0 15px 0 15px;
 }
@@ -110,9 +185,14 @@ header {
 
 // CAROUSEL 
 #carousel-example-generic {
+  width: 100%;
   -webkit-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+}
+
+.item {
+  width: 940px !important;
 }
 
 .carousel-caption {
@@ -129,7 +209,7 @@ header {
 /*CONTENT*/ 
 .content-title {
   color: $font-grand-title-color;
-  font-size: 145%;
+  font-size: 140%;
   padding-top: 25px;
 }
 
@@ -150,7 +230,7 @@ footer {
   padding-top: 10px;
 }
 
-.review-us p{
+.footer-col-title {
   color: #3C7D38;
   font-style: italic;
 }
@@ -170,6 +250,7 @@ footer {
 
 #weather {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 #social {
@@ -200,38 +281,4 @@ footer {
 .copy-right {
   text-align: center;
   font-size: 75%;
-}
-
-
-
-
-/* RESPONSIVE MENU */
-@media screen and (max-width: 1100px) {
-  
-  header {
-    text-align: center;
-  }
-
-  .head-ssi-logo {
-    text-align: center;
-  }
-
-  #home-container {
-    width: 100%;
-    line-height: 1.2;
-  }
-  
-  .carousel-inner {
-    display: none;
-  }
-   #footer-container {
-    padding: 5px 15px 5px 15px; 
-   }
-   
-   .ssi-nitrox-logos {
-     text-align: center;
-   }
-/* menu below */  
-
-  
 }

@@ -4,25 +4,42 @@
         'myApp.utilityService', 'myApp.constants', // MISC
         'myApp.directives', 'myApp.filters', // MISC
         'myApp.services', // Services
-        'myApp.controller' // controller
+        'myApp.controller', // controller
+        'ngSanitize' 
         ]);
 
     myApp.config(['$routeProvider', function($routeProvider) {
       // Login
-      $routeProvider.when('/page1', {
-        templateUrl: 'partials/page1.html',
-        controller: 'sampleCtrl'
+      $routeProvider.when('/home', {
+        templateUrl: 'partials/home.html',
+        controller: 'HomeCtrl',
+        controllerAs: 'home'
       });
       
+      // Reef Map
+      $routeProvider.when('/reef_map', {
+        templateUrl: 'partials/reef_map.html',
+        controller: 'ReefMapCtrl',
+        controllerAs: 'reefMap'
+      });
+
       // Current Pricing for diving 
       $routeProvider.when('/current_pricing', {
         templateUrl: 'partials/current_pricing.html',
-        controller: 'CurrentPricingCtrl'
+        controller: 'CurrentPricingCtrl',
+        controllerAs: 'currentPricing'
+      });
+      
+      // About Cozumel
+      $routeProvider.when('/about_cozumel', {
+        templateUrl: 'partials/about_cozumel.html',
+        controller: 'AboutCozumelCtrl',
+        controllerAs: 'aboutCozumel'
       });
       
       // Default
       $routeProvider.otherwise({
-        redirectTo: '/page1'
+        redirectTo: '/home'
       });
     }]);
 })();

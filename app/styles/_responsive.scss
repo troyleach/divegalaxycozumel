@@ -1,0 +1,109 @@
+/* RESPONSIVE MENU */
+@media screen and (max-width: 1100px) {
+  
+  header {
+    text-align: center;
+  }
+
+  .head-ssi-logo {
+    text-align: center;
+  }
+
+  #home-container {
+    width: 100%;
+    line-height: 1.2;
+  }
+  
+  .carousel-inner {
+    display: none;
+  }
+   #footer-container {
+    padding: 5px 15px 5px 15px; 
+   }
+   
+   .ssi-nitrox-logos {
+     text-align: center;
+   }
+/* Typical panel header */  
+  
+  .partial-header {
+    height: 100%;
+    color: #000;
+  }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+  
+/* Typical panel header */  
+  
+  .partial-header {
+    height: 50px;
+  }
+
+  .partial-header-page-title {
+    text-align: center;
+    font-size: 125%;
+    padding: 27px 0 0 0;
+  }
+
+  .partial-header-page-identifier {
+    text-align: center;
+    padding: 27px 0 0 0;
+  }
+
+  .about-pictures {
+    padding-top: 15px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  
+/* Typical panel header */  
+  
+  .partial-header {
+    height: 100%;
+  }
+
+  .partial-header-page-title {
+    text-align: center;
+    font-size: 120%;
+    padding: 27px 0 0 0;
+  }
+
+  .partial-header-page-identifier {
+    text-align: center;
+    padding: 27px 0 0 0;
+  }
+
+  .about-pictures {
+    padding-top: 15px;
+  }
+}
+
+
+
+@media screen and (max-width: 570px) {
+  
+/* Typical panel header */  
+  
+  .partial-header {
+    height: 100%;
+  }
+
+  .partial-header-page-title {
+    text-align: center;
+    font-size: 120%;
+    padding: 27px 0 0 0;
+  }
+
+  .partial-header-page-identifier {
+    text-align: center;
+    padding: 27px 0 0 0;
+  }
+
+  .about-pictures {
+    padding-top: 15px;
+  }
+}

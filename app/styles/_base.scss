@@ -1,0 +1,33 @@
+#page-container {
+  border: none;
+  margin: 15px 0 30px 0;
+  -webkit-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+}
+
+.partial-header {
+  height: 50px;
+  background-color: $panel-header-color;
+  color: #000;
+}
+
+.partial-header-page-title {
+  text-align: left;
+  font-family: $page-title-font-family;
+  font-size: 125%;
+  padding: 25px 0 0 0;
+}
+
+.partial-header-page-identifier {
+  text-align: right;
+  padding: 25px 0 0 0;
+}
+.body-content {
+  padding: 30px;
+  text-align: justify;
+}
+
+.about-pictures {
+  width: 100%;
+}
