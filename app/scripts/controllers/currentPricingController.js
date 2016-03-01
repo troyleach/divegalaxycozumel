@@ -6,7 +6,7 @@
   var controllerModule = angular.module('myApp.controller');
 
   controllerModule.controller('CurrentPricingCtrl', ['$scope', function($scope) {
-    this.name_of_page = "Current Priging";
-    this.message = 'Current pricing controller tested';       
+    this.pageIdentifier = "Current Pricing";
+    this.panelTitle = 'Learn About our Scuba Dive Courses & Diving Rates';       
   }]);
 })();

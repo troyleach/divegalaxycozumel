@@ -21,6 +21,30 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+    "app/bower_components/jquery/dist/jquery.js",
+    "app/bower_components/angular/angular.js",
+    "app/bower_components/angular-resource/angular-resource.js",
+    "app/bower_components/angular-route/angular-route.js",
+    "app/bower_components/angular-cookies/angular-cookies.js",
+    "app/bower_components/bootstrap/dist/js/bootstrap.js",
+    "app/bower_components/angular-sanitize/angular-sanitize.js",
+    "app/bower_components/modernizr/modernizr.js",
+    "app/bower_components/angular-mocks/angular-mocks.js",
+
+    "app/scripts/mainApp.js",
+    "app/scripts/controllers/indexController.js",
+    "app/scripts/controllers/homeController.js",
+    "app/scripts/controllers/reefMapController.js",
+    "app/scripts/controllers/currentPricingController.js",
+    "app/scripts/controllers/aboutCozumelController.js",
+    "app/scripts/services/getWeatherService.js",
+    "app/scripts/directives/sampleDirective.js",
+    "app/scripts/filters/sampleFilter.js",
+    "app/scripts/utility/constant.js",
+    "app/scripts/utility/util.js",
+    "app/scripts/utility/menu.js",
+
+    "test/**/*_spec.js"
     ],
 
     // list of files / patterns to exclude
