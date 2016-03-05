@@ -5,7 +5,8 @@
         'myApp.directives', 'myApp.filters', // MISC
         'myApp.services', // Services
         'myApp.controller', // controller
-        'ngSanitize' 
+        'ngSanitize',
+        'ngAnimate'
         ]);
 
     myApp.config(['$routeProvider', function($routeProvider) {

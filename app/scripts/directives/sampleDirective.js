@@ -3,9 +3,9 @@
  */
 (function() {
     'use strict';
-    var directiveModule = angular.module('myApp.directives', []);
+    var directiveModule = angular.module('myApp.directives');
 
-    directiveModule.directive('sampleDirective', ['$scope', function($scope) {
+    directiveModule.directive('sampleDirective', ['$scope', function($timeout) {
         return {
             restrict: 'E',
             transclude: true,
