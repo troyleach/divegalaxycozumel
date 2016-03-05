@@ -6,7 +6,7 @@
   var controllerModule = angular.module('myApp.controller');
 
   controllerModule.controller('ReefMapCtrl', ['$scope', function($scope) {
-    this.name_of_page = "Reef Map";
-    this.message = 'Reef Map controller tested';       
+    this.pageIdentifier = "Reef Map";
+    this.panelTitle = "Don't Imagine Paradise, Visit Cozumel!";     
   }]);
 })();

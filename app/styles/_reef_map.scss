@@ -1,0 +1,23 @@
+.flags {
+  text-align: center;
+}
+
+.mexican-flag {
+  height: 72px;
+}
+
+.dive-flag {
+  @extend .mexican-flag;
+}
+
+.ssi-logo {
+  @extend .mexican-flag;
+}
+.dive-sites {
+  margin: 15px;
+  width: 75%;
+  -webkit-box-shadow: 5px 5px 15px -2px rgba(204,142,142,0.8);
+  -moz-box-shadow: 5px 5px 15px -2px rgba(204,142,142,0.8);
+  box-shadow: 5px 5px 15px -2px rgba(204,142,142,0.8);
+}
+

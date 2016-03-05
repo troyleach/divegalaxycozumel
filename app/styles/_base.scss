@@ -24,8 +24,12 @@
   padding: 25px 0 0 0;
 }
 .body-content {
+  background-color: $panel-body-color;
   padding: 30px;
   text-align: justify;
+  -moz-box-shadow: 1px 3px 2px #252463;
+  -webkit-box-shadow: 1px 3px 2px #252463;
+  box-shadow:         1px 3px 2px #252463;
 }
 
 .about-pictures {

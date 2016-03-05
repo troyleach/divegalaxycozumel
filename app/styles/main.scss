@@ -5,7 +5,7 @@ $font-grand-title-color: #9BCAF2;
 $body-font-color: #999;
 $bold-font-color: #5f2c43;
 $design-borders: 1px solid red;
-$panel-body-color: #E1E9F0;
+$panel-body-color: #252463;
 $font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $font-family-carousel-text: "Comic Sans MS", "Comic Sans MS", cursive;
 $menu-background-color: #9BCAF2;
@@ -15,8 +15,9 @@ $white-color: #fff;
 $panel-header-color: #9BCAF2;
 $page-title-font-family: 'Lobster', cursive;
 $font-family-rochester: 'Rochester', cursive;
-@import "menu";
 @import "base";
+@import "menu";
+@import "reef_map";
 @import "responsive";
 
 

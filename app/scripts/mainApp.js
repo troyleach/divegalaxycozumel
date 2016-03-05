@@ -37,6 +37,20 @@
         controllerAs: 'aboutCozumel'
       });
       
+      // Gallery 
+      $routeProvider.when('/gallery', {
+        templateUrl: 'partials/gallery.html',
+        controller: 'GalleryCtrl',
+        controllerAs: 'gallery'
+      });
+      
+      // Reservation 
+      $routeProvider.when('/reservations', {
+        templateUrl: 'partials/reservations.html',
+        controller: 'ReservationsCtrl',
+        controllerAs: 'reservation'
+      });
+      
       // Default
       $routeProvider.otherwise({
         redirectTo: '/home'
