@@ -433,6 +433,30 @@
   box-shadow: 5px 5px 15px -2px rgba(204, 142, 142, 0.8);
 }
 
+.photo-gallery {
+  text-align: center !important;
+}
+
+.polaroid {
+  position: relative;
+  width: 450px;
+}
+
+.polaroid img {
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  box-shadow: 3px 3px 3px #777;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+}
+
 /* RESPONSIVE MENU */
 @media screen and (max-width: 1100px) {
   header {
@@ -493,6 +517,11 @@
     height: 100%;
   }
 
+  .body-content {
+    padding: 0;
+    text-align: center;
+  }
+
   .partial-header-page-title {
     text-align: center;
     font-size: 120%;
@@ -506,6 +535,10 @@
 
   .about-pictures {
     padding-top: 15px;
+  }
+
+  .photo-gallery {
+    text-align: center !important;
   }
 }
 @media screen and (max-width: 570px) {
@@ -514,6 +547,11 @@
     height: 100%;
   }
 
+  .body-content {
+    padding: 0;
+    text-align: center;
+  }
+
   .partial-header-page-title {
     text-align: center;
     font-size: 120%;
@@ -527,6 +565,36 @@
 
   .about-pictures {
     padding-top: 15px;
+  }
+
+  .photo-gallery {
+    text-align: center !important;
+  }
+
+  .polaroid {
+    position: relative;
+    width: 200px;
+  }
+
+  .polaroid img {
+    border: 10px solid #fff;
+    border-bottom: 45px solid #fff;
+    box-shadow: 3px 3px 3px #777;
+  }
+
+  .polaroid p {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+    font: 400 18px/1 'Kaushan Script', cursive;
+    color: #888;
+  }
+
+  .content {
+    width: 145px !important;
+    margin: 20px auto 0 auto;
+    text-align: center;
   }
 }
 .test {

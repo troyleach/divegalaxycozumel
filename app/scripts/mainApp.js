@@ -5,7 +5,8 @@
         'myApp.directives', 'myApp.filters', // MISC
         'myApp.services', // Services
         'myApp.controller', // controller
-        'ngSanitize' 
+        'ngSanitize', 
+        'jkuri.gallery'
         ]);
 
     myApp.config(['$routeProvider', function($routeProvider) {
