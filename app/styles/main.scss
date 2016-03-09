@@ -19,8 +19,13 @@ $font-family-rochester: 'Rochester', cursive;
 @import "menu";
 @import "reef_map";
 @import "gallery";
+@import "booking";
 @import "responsive";
 
+
+.input-xlg {
+  height: 34px;
+}
 
 .test {
   border: $design-borders;

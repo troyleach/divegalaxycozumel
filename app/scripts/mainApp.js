@@ -6,7 +6,10 @@
         'myApp.services', // Services
         'myApp.controller', // controller
         'ngSanitize', 
-        'jkuri.gallery'
+        'jkuri.gallery',
+        'ngAnimate',
+        'ui.bootstrap',
+        'ui.mask'
         ]);
 
     myApp.config(['$routeProvider', function($routeProvider) {

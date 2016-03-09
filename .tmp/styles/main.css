@@ -433,28 +433,20 @@
   box-shadow: 5px 5px 15px -2px rgba(204, 142, 142, 0.8);
 }
 
-.photo-gallery {
-  text-align: center !important;
-}
-
-.polaroid {
-  position: relative;
+.picture-of-month {
   width: 450px;
 }
 
-.polaroid img {
-  border: 10px solid #fff;
-  border-bottom: 45px solid #fff;
-  box-shadow: 3px 3px 3px #777;
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
 }
 
-.polaroid p {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  bottom: 0px;
-  font: 400 18px/1 'Kaushan Script', cursive;
-  color: #888;
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
 }
 
 /* RESPONSIVE MENU */
@@ -597,6 +589,10 @@
     text-align: center;
   }
 }
+.input-xlg {
+  height: 34px;
+}
+
 .test {
   border: 1px solid red;
 }
