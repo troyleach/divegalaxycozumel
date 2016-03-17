@@ -9,6 +9,7 @@
         'jkuri.gallery',
         'ngAnimate',
         'ui.bootstrap',
+        'gm.datepickerMultiSelect',
         'ui.mask'
         ]);
 
@@ -31,7 +32,7 @@
       $routeProvider.when('/current_pricing', {
         templateUrl: 'partials/current_pricing.html',
         controller: 'CurrentPricingCtrl',
-        controllerAs: 'currentPricing'
+        controllerAs: 'pricing'
       });
       
       // About Cozumel

@@ -18,38 +18,65 @@
 
           <br />
 <!-- Date picker -->
-          <pre>Selected Start date is: <em>{{startDate | date:'fullDate' }}</em></pre>
-          <pre>Selected End date is: <em>{{endDate | date:'fullDate' }}</em></pre>
-
-          
-            <div class="row">
-              <div class="col-md-6">
-              <h4>Starting Diving</h4>
-                <p class="input-group">
-                  <input type="text" class="form-control input-xlg" uib-datepicker-popup="{{format}}" ng-model="reservation.user.startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-                  </span>
-                </p>
-              </div>
-              <div class="col-md-6">
-              <h4>End Diving</h4>
-                <p class="input-group">
-                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="reservation.user.endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-                  </span>
-                </p>
-              </div>
+          <div class="row">
+            <div class="col-md-4">
+              <uib-datepicker ng-model='reservation.activeDate' multi-select='reservation.selectedDates' select-range='{{reservation.type=="range"}}'></uib-datepicker>
             </div>
+            <div class="col-md-4">
+              
+                Selected Dates:
+                <div class='well well-sm'>
+                  <div ng-repeat='d in reservation.selectedDates | orderBy'>
+                    {{d | date : 'fullDate'}}
+                    <button class='btn btn-xs btn-warning' style='margin:5px' ng-click='reservation.removeFromSelected(d)'>Remove</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+                <!-- <div class='panel'><h3>Selection Type:</h3>
+                  <div class='btn-group'>
+                    <button class='btn btn-primary' ng-model='reservation.type' uib-btn-radio='"individual"'>Individual</button>
+                    <button class='btn btn-primary' ng-model='reservation.type' uib-btn-radio='"range"'>Range</button>
+                  </div>
+                </div> -->
+                <!-- <table>
+                  <tr>
+                    <td>
+                      <uib-datepicker ng-model='reservation.activeDate' multi-select='reservation.selectedDates' select-range='{{reservation.type=="range"}}'></uib-datepicker>
+                    </td>
+                    <td style='width:50px'>
+                    </td>
+                    <td>
+                      <div ng-if='reservation.type=="individual"'>
+                        Selected Dates:
+                        <div class='well well-sm'>
+                          <div ng-repeat='d in reservation.selectedDates | orderBy'>
+                            {{d | date : 'fullDate'}}
+                            <button class='btn btn-xs btn-warning' style='margin:5px' ng-click='reservation.removeFromSelected(d)'>Remove</button>
+                          </div>
+                        </div>
+                      </div> -->
 
-            <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
-            <hr />
+                      <!-- <div ng-if='reservation.type=="range"' >
+                        Selected Range: 
+                        <div class='well well-sm'>
+                          {{(reservation.selectedDates | orderBy)[0] | date:"fullDate"}}
+                          <span ng-if='reservation.selectedDates.length > 1'>
+                            - {{(reservation.selectedDates | orderBy : '-')[0] | date:"fullDate"}}
+                          </span>
+                        </div>
+                      </div> -->
+                  <!--   </td>
+                  </tr> 
+                </table> -->
+
+
          
           <input type="button" class="btn btn-sm btn-danger" ng-click="reservation.reset()" value="Reset" />
           <input type="submit" class="btn btn-sm btn-success" ng-click="reservation.saveData(user)" value="Save" />
         </form>
         <pre>user = {{reservation.user | json}}</pre>
+        <pre>user = {{reservation.selectedDates | json}}</pre>
       </div>
     </div>
   </div>

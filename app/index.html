@@ -17,24 +17,18 @@
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/weather-icons-wind.min.css">
         <link rel="stylesheet" href="styles/weather-icons.min.css">
-
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="bower_components/nggallery/src/css/screen.css">
         <link rel="stylesheet" href="bower_components/ngGallery/src/css/ngGallery.css">
         <!-- endbuild -->
         
-        
         <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-        <!-- when the below is active the gallery is all screwed up -->
-        <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-combined.min.css"> -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-        <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
 
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-
+        
         <!-- build:js scripts/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
@@ -51,11 +45,12 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="bower_components/gm.datepickerMultiSelect/dist/gm.datepickerMultiSelect.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script type="text/javascript" src="bower_components/ngGallery/src/js/ngGallery.js"></script> 
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.2.js"></script>
+    <!-- // <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.2.js"></script> -->
 
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- Any include make it between the build comments below -->
@@ -69,6 +64,7 @@
     <script src="scripts/controllers/galleryController.js"></script>
     <script src="scripts/controllers/reservationsController.js"></script>
     <script src="scripts/services/getWeatherService.js"></script>
+    <script src="scripts/services/getPricingService.js"></script>
     <script src="scripts/directives/sampleDirective.js"></script>
     <script src="scripts/filters/sampleFilter.js"></script>
     <script src="scripts/utility/constant.js"></script>
@@ -77,6 +73,8 @@
     <!-- inject:partials -->
     <!-- endinject -->
     <!-- endbuild -->
+
+    <script data-require="ui-bootstrap@*" data-semver="0.14.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.1.min.js"></script>
     <script>
     // Load this when the DOM is ready
     $(function(){
@@ -104,35 +102,8 @@
                     <div id='cssmenu'>
                       <ul>
                          <li><a href='#/'>Home</a></li>
-                         <li class='active'><a href=''>Diving</a>
-                            <ul> 
-                              <li><a href="#/reef_map">Reef Map</a></li>
-                              <li><a href="#/current_pricing">Current Prices (2-Tank)</a></li>
-                              <li><a href="">Advanced Adventurer</a></li>   
-                            
-                            <li class='active'><a href=''>Training</a>
-                               <ul>
-                                  <li><a href="">Open Water Diver</a></li>
-                                  <li><a href="">Advanced Open Water Diver</a></li>
-                                  <li><a href="">Advanced Adventurer</a></li>
-                                  <li><a href="">Specialties</a>
-                                    <ul>
-                                      <li><a href="">Boat Diving</a></li>
-                                      <li><a href="">Deep Diving</a></li>
-                                      <li><a href="">Enriched Air Nitrox</a></li>
-                                      <li><a href="">Night Diving and Limited Visibility</a></li>
-                                      <li><a href="">Navigation</a></li>
-                                      <li><a href="">Perfect Buoyancy</a></li>
-                                      <li><a href="">Stress & Rescue</a></li>
-                                      <li><a href="">Snorkeling</a></li>
-                                      <li><a href="">Scuba Skills Update</a></li>
-                                    </ul>
-                                  </li>
-                               </ul>
-                            </li>
-                            </ul>
-                         </li>
-                         
+                         <li class='active'><a href='#/current_pricing'>Diving</a>
+                         <li><a href="#/reef_map">Reef Map</a></li>
                          <li><a href="#/about_cozumel">About Cozumel</a></li>
                          <li><a href="#/gallery">Gallery</a></li>
                          <li><a href="#/reservations">Book My Diving</a></li>

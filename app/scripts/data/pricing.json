@@ -1,0 +1,28 @@
+{
+  "data": {
+    "pricing": {
+      "diving": {
+        "two_tank": 90,
+        "three_tank": 130,
+        "beach_one_tank": 80,
+        "night_dive": 55,
+        "bubble_watcher": 20,
+        "private_charter": 480,
+        "private_dive_master": 50
+      },
+      "park_fee": 2.5,
+      "course": {},
+      "specialties": {},
+      "rental_gear": {
+        "complete_set": 25,
+        "bcd": 10,
+        "regulator": 10,
+        "wetsuit": 10,
+        "mask_fins": 10,
+        "light": 10,
+        "nitrox": 10,
+        "cc_tank": 5
+      }
+    }
+  }
+}

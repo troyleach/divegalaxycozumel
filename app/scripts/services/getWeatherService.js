@@ -1,5 +1,5 @@
 /*
- * Services
+ * Weather Services
  */
 (function() {
   'use strict';
