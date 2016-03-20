@@ -9,30 +9,39 @@
   </div>
   <div class="body-content">
     <div class="row">
-      <div class="col-sm-12 center-it">
+      <div class="col-sm-12">
         <form name="reservation.userInformation" novalidate class="user-information">
-          First Name: <input type="text" ng-model="reservation.user.firstName" /><br />
-          Last Name: <input type="text" ng-model="reservation.user.lastName" /><br />
-          E-mail: <input type="email" ng-model="reservation.user.email" /><br />
-          Phone Number: <input name="phone" ng-model="reservation.user.phone" ui-mask="{{'(999) 999-9999'}}" type="text"/><br />
+          First Name:<br>
+          <input type="text" ng-model="reservation.user.firstName" /><br />
+          Last Name:<br>
+          <input type="text" ng-model="reservation.user.lastName" /><br />
+          E-mail:<br>
+          <input type="email" ng-model="reservation.user.email" /><br />
+          Phone Number:<br>
+          <input name="phone" ng-model="reservation.user.phone" ui-mask="{{'(999) 999-9999'}}" type="text"/><br />
 
           <br />
 <!-- Date picker -->
+        <div class="date-picker">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <uib-datepicker ng-model='reservation.activeDate' multi-select='reservation.selectedDates' select-range='{{reservation.type=="range"}}'></uib-datepicker>
             </div>
-            <div class="col-md-4">
-              
+            <div class="">
                 Selected Dates:
-                <div class='well well-sm'>
+                <div class='col-md-6 well well-sm'>
                   <div ng-repeat='d in reservation.selectedDates | orderBy'>
+                    <div class="col-sm-8">
                     {{d | date : 'fullDate'}}
-                    <button class='btn btn-xs btn-warning' style='margin:5px' ng-click='reservation.removeFromSelected(d)'>Remove</button>
+                    </div>
+                    <div class="col-sm-4">
+                      <button class='btn btn-xs btn-warning' style='margin:5px' ng-click='reservation.removeFromSelected(d)'>Remove</button>
+                    </div>
                   </div>
                 </div>
             </div>
           </div>
+        </div>
                 <!-- <div class='panel'><h3>Selection Type:</h3>
                   <div class='btn-group'>
                     <button class='btn btn-primary' ng-model='reservation.type' uib-btn-radio='"individual"'>Individual</button>

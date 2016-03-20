@@ -12,11 +12,12 @@
     reservation.user = {
       "firstName": undefined,
       "lastName": undefined,
-      "email": undefined
+      "email": undefined,
+      "dive_dates": []
     };
 
     reservation.reset = function() {
-        reservation.user = {};
+      reservation.user = {};
     };
 
     reservation.saveData = function(information) {
@@ -29,8 +30,6 @@
     reservation.selectedDates = [new Date().setHours(0, 0, 0, 0)];
     // reservation.selectedDates2 = [new Date().setHours(0, 0, 0, 0)];
     reservation.type = 'individual';
-    
-    
     
     reservation.removeFromSelected = function(dt) {
       reservation.selectedDates.splice(reservation.selectedDates.indexOf(dt), 1);

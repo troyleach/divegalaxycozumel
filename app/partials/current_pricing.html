@@ -9,11 +9,10 @@
   </div>
   <div class="body-content">
     <div class="row">
-      <div class="col-sm-12 center-it">
+      <div class="col-sm-12">
         <ul class="nav nav-tabs" id="myTab">
           <li class="active"><a data-target="#diving" data-toggle="tab">Diving</a></li>
           <li><a data-target="#training" data-toggle="tab">Training</a></li>
-          <li><a data-target="#specialties" data-toggle="tab">Specialties</a></li>
           <li><a data-target="#policies" data-toggle="tab">Policies</a></li>
         </ul>
 
@@ -39,8 +38,6 @@
                     <div class="slide-animate" ng-include="pricing.diving"></div>
                   </div>
               </div>
-              <p>Tanks, weights, belts are included.</p>
-              <p>* Prices do not include {{pricing.park_fee | currency}} Marine Park Fee per day and tips for the crew...</p>
             </div>
             <div class="col-md-6">
               <div class="panel panel-info">
@@ -50,16 +47,18 @@
                   </div>
               </div>
             </div>
+              <p>* Tanks, weights, belts are included.</p>
+              <p>** Prices do not include {{pricing.park_fee | currency}} Marine Park Fee per day and tips for the crew...</p>
           </div>
           <div class="tab-pane" id="training">
             <div class="slide-animate" ng-include="pricing.training"></div>
           </div>
-          <div class="tab-pane" id="specialties">Specialties</div>
-          <div class="tab-pane" id="policies">We need some Policies</div>
+          <div class="tab-pane" id="policies">
+            <div class="slide-animate" ng-include="pricing.policies"></div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 

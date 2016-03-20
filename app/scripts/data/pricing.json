@@ -13,6 +13,22 @@
       "park_fee": 2.5,
       "course": {},
       "specialties": {},
+      "training": {
+        "scuba_diver_course": 275,
+        "open_water_certification": 425,
+        "open_water_certification_plus": 525,
+        "open_water_referral": 295,
+        "advanced_adventurer": 50,
+        "advanced_open_water": 200,
+        "master_diver": 270,
+        "scuba_skills_update": 160,
+        "snorkeling": 60,
+        "try_scuba": {
+          "beach_one_tank": 80,
+          "boat_two_tank": 130
+        }
+      },
+      "whaleshark": {},
       "rental_gear": {
         "complete_set": 25,
         "bcd": 10,
