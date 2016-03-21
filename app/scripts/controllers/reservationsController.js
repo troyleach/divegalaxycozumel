@@ -13,15 +13,23 @@
       "firstName": undefined,
       "lastName": undefined,
       "email": undefined,
-      "dive_dates": []
+      "groupSize": undefined,
+      "selectedDiving": [],
+      "selectedTraining": [],
+      "selectedDates": []
     };
 
     reservation.reset = function() {
       reservation.user = {};
     };
 
-    reservation.saveData = function(information) {
-      console.log(information);
+    reservation.saveData = function() {
+
+      console.log(reservation.userInformation);
+    };
+
+    reservation.addDiving = function(diving) {
+      reservation.user.selectedDiving.push(diving); 
     };
 
 
