@@ -10,7 +10,8 @@
         'ngAnimate',
         'ui.bootstrap',
         'gm.datepickerMultiSelect',
-        'ui.mask'
+        'ui.mask',
+        "checklist-model"
         ]);
 
     myApp.config(['$routeProvider', function($routeProvider) {

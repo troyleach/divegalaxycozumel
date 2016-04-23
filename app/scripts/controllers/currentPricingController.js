@@ -7,13 +7,13 @@
 
   controllerModule.controller('CurrentPricingCtrl', ['$scope', 'getPricingFactory', function($scope, getPricingFactory) {
     var pricing = this;
-
+//TODO before push to prod. make sure I delete the /dist/
     pricing.pageIdentifier = "Current Pricing";
     pricing.panelTitle = 'Learn About our Scuba Dive Courses & Diving Rates';
-    pricing.diving = '/partials/pricing_partials/diving.html';
-    pricing.rental = '/partials/pricing_partials/rental_gear.html';
-    pricing.training = '/partials/pricing_partials/training.html';
-    pricing.policies = '/partials/pricing_partials/policies.html';
+    pricing.diving = 'partials/pricing_partials/diving.html';
+    pricing.rental = 'partials/pricing_partials/rental_gear.html';
+    pricing.training = 'partials/pricing_partials/training.html';
+    pricing.policies = 'partials/pricing_partials/policies.html';
 
     getPricingFactory.getPricing().then(function(response) {
       pricing.currentPricingDiving = response.data.pricing.diving;

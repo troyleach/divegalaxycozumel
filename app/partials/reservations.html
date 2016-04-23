@@ -7,12 +7,13 @@
       {{ reservation.pageIdentifier }}
     </div>
   </div>
-          <button class="btn btn-primary" ng-model="twoTank" ng-click="reservation.addDiving('2 Tank Boat Diving')"><i class="fa fa-square-o"></i> Two Tank Boat Dive</button>
-          <i class="fa fa-check-square-o"></i>
   <div class="body-content">
-    <div class="row">
-      <div class="col-sm-12">
-        <form name="reservation.userInformation" novalidate class="user-information">
+    <form name="reservation.userInformation" novalidate class="user-information">
+    <h3>
+      Personal information
+    </h3>
+      <div class="row">
+        <div class="col-sm-12">
           First Name:<br>
           <input type="text" ng-model="reservation.user.firstName" /><br />
           Last Name:<br>
@@ -21,40 +22,71 @@
           <input type="email" ng-model="reservation.user.email" /><br />
           Phone Number:<br>
           <input name="phone" ng-model="reservation.user.phone" ui-mask="{{'(999) 999-9999'}}" type="text"/><br />
-          How many will be diving in your group:<br>
-          <input name="number" ng-model="reservation.user.groupSize" type="number"/><br />
-
-          <br />
-          
-<!-- Date picker -->
-        <div class="date-picker">
-          <div class="date-picker-title">Please selected all the days you would like to dive.</div>
-          <div class="row">
-            <div class="col-md-6">
-              <uib-datepicker ng-model='reservation.activeDate' multi-select='reservation.user.selectedDates' select-range='{{reservation.type=="range"}}'></uib-datepicker>
-            </div>
-            <div class="" ng-show="reservation.user.selectedDates.length > 0">
+        </div><!-- end of col-sm-12 -->
+      </div>
+      <br>
+      <h3>
+        Select the type of diving you will be doing.
+      </h3>
+      <p>(check all that apply)</p>
+      <div class="row">
+        <div class="col-sm-4">
+          <div ng-repeat="dive in reservation.diving">
+            <input style="display:none; margin: 20px" type="checkbox" id="checkbox"/>
+            <input type="checkbox" checklist-model="reservation.user.selectedDiving" checklist-value="dive"> {{dive.title}}<br>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div ng-repeat="course in reservation.training">
+            <input type="checkbox" checklist-model="reservation.user.selectedTraining" checklist-value="course"> {{course.title}}<br>
+          </div>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+      <!-- Date picker -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="date-picker">
+            <h3>
+              Please select all dates you would like to dive.
+            </h3>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <uib-datepicker ng-model='reservation.activeDate' multi-select='reservation.user.selectedDates' select-range='{{reservation.type=="range"}}'></uib-datepicker>
+              </div>
+              <div class="" ng-show="reservation.user.selectedDates.length > 0">
                 Selected Dates:
                 <div class='col-md-6 well well-sm'>
                   <div ng-repeat='d in reservation.user.selectedDates | orderBy'>
                     <div class="col-sm-8">
-                    {{d | date : 'fullDate'}}
+                      {{d | date : 'fullDate'}}
                     </div>
                     <div class="col-sm-4">
                       <button class='btn btn-xs btn-warning' style='margin:5px' ng-click='reservation.removeFromSelected(d)'>Remove</button>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="booking-buttons">
-          <input type="button" class="btn btn-sm btn-danger" ng-click="reservation.reset()" value="Reset" />
-          <input type="submit" class="btn btn-sm btn-success" ng-click="reservation.saveData()" value="Save" />
-        </div>
-        </form>
-        <pre>user = {{reservation.user | json}}</pre>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>
+            Leave us a personal message.
+          </h3>
+         <textarea id="message" name="message" ng-model="reservation.user.message"  placeholder="Leave us a personal message..." cols="80" rows="10"></textarea>
+        </div>
+      </div>
+
+      <div class="booking-buttons">
+        <input type="button" class="btn btn-sm btn-danger" ng-click="reservation.reset()" value="Reset" />
+        <input type="submit" class="btn btn-sm btn-success" ng-click="reservation.saveData()" value="Save" />
+      </div>
+    </form>
+    <pre>user = {{reservation.user | json}}</pre>
   </div>
 </div>
