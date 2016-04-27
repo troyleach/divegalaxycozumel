@@ -29,63 +29,15 @@
       <div class="panel-heading">Training</div>
         <div class="panel-body">
           <table>
-            <tr>
+            <tr ng-repeat="train in pricing.currentPricingTraining">
               <td class="col-description">
-               Scuba Diver Course: 
+                {{train.title}} 
               </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.scuba_diver_course | currency}}
+              <td class="col-price" ng-if="train.price == nil">
+                $ Contact us
               </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-               Open Water Diver Certification: 
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.open_water_certification | currency}}
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Open Water Certification PLUS:<br>
-                (Includes Nitrox Certification)
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.open_water_certification_plus | currency}}
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Open Water Referral 
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.open_water_referral | currency}}
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Advanced Adventurer:<br>
-                (Number of required dives logged, varies depending on the specialties selected)
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.advanced_adventurer | currency}}
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Advanced Open Water Diver:<br>
-                (Number of required dives logged, varies depending on the specialties selected)
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.advanced_open_water | currency}}
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Scuba Skills Update:<br>
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.scuba_skills_update | currency}}
+              <td class="col-price" ng-if="train.price != nil">
+                {{train.price | currency}}
               </td>
             </tr>
           </table>
@@ -97,96 +49,15 @@
       <div class="panel-heading">Specialties</div>
         <div class="panel-body">
           <table>
-            <tr>
+            <tr ng-repeat="specialty in pricing.currentPricingSpecialties">
               <td class="col-description">
-               Boat Diving 
+                {{specialty.title}} 
               </td>
-              <td class="col-description">
-                $ - Contact Us
+              <td class="col-price" ng-if="specialty.price == nil">
+                $ Contact us
               </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Deep Diving
-              </td>
-              <td class="col-description">
-                $ - Contact Us
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Navigation
-              </td>
-              <td class="col-description">
-                $ - Contact Us
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Night Diving and Limited Visibility
-              </td>
-              <td class="col-description">
-                $ - Contact Us
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Nitrox EAN
-              </td>
-              <td class="col-description">
-                $ - Contact Us
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Perfect Buoyancy
-              </td>
-              <td class="col-description">
-                $ - Contact Us
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Science of Diving
-              </td>
-              <td class="col-description">
-                $ - Contact Us
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                Stress Rescue
-              </td>
-              <td class="col-description">
-                $ - Contact Us 
-              </td>
-            <tr>
-              <td class="col-description">
-                Snorkeling: 
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.snorkeling | currency}}
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description-no-line">
-                Try Scuba Diving: 
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                &nbsp;&nbsp;&nbsp;Beach - 1 Tank: 
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.try_scuba.beach_one_tank | currency}}
-              </td>
-            </tr>
-            <tr>
-              <td class="col-description">
-                &nbsp;&nbsp;&nbsp;Boat - 2 Tank:
-              </td>
-              <td class="col-price">
-                {{pricing.trainingPricing.try_scuba.boat_two_tank | currency}}
+              <td class="col-price" ng-if="specialty.price != nil">
+                {{specialty.price | currency}}
               </td>
             </tr>
           </table>

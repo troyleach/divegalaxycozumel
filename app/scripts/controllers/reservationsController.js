@@ -21,32 +21,6 @@
       "selectedDates": []
     };
 
-    reservation.diving = [
-      "2 Tank boat dive",
-      "2 Tank Twilight dives",
-      "3 Tank boat dive",
-      "3 Tank Twilight dives",
-      "Beach One 1 tank",
-      "Night Dive",
-      "Bubble Watching",
-      "Private Charter",
-      "Private Dive Master"
-    ];
-
-    reservation.training = [
-      "Scuba Diver Course",
-      "Open water Certification",
-      "Open Water Certificaiton Plus",
-      "Open Water referral",
-      "Advanced Adventurer",
-      "Advanced Open Water",
-      "Master Diver",
-      "Scuba Skills Update",
-      "Snorkeling",
-      "Try Scuba, Beach 1 Tank",
-      "Try Scuba, Boat 2 tank"
-    ];
-
     reservation.checkFirst = function() {
       console.log('checkFirst ran');
       reservation.user.selectedDiving.splice(0, reservation.user.selectedDiving.length); 
@@ -99,7 +73,6 @@
       }).error(function(data, status){
         //errors go here
       });
-      console.log(data);
       $route.reload();
     };
 

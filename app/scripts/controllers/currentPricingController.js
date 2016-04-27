@@ -15,13 +15,23 @@
     pricing.training = 'partials/pricing_partials/training.html';
     pricing.policies = 'partials/pricing_partials/policies.html';
 
-    getPricingFactory.getPricing().then(function(response) {
-      pricing.currentPricingDiving = response.data.pricing.diving;
-      pricing.currentPricingRental = response.data.pricing.rental_gear;
-      pricing.park_fee = response.data.pricing.park_fee;
-      pricing.trainingPricing = response.data.pricing.training;
-      pricing.tryScuba = response.data.pricing.training.try_scuba;
+//TODO the jason that is getting returned is not to spec.. FIX
+    getPricingFactory.getDivingPricing().then(function(response) {
+      pricing.currentPricingDiving = response;
     });
+
+    getPricingFactory.getTrainingPricing().then(function(response) {
+      pricing.currentPricingTraining = response;
+    });
+
+    getPricingFactory.getRentalPricing().then(function(response) {
+      pricing.currentPricingRentals = response;
+    });
+
+    getPricingFactory.getSpecialtiesPricing().then(function(response) {
+      pricing.currentPricingSpecialties = response;
+    });
+
 
   }]);
 })();

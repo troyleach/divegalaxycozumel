@@ -1,5 +1,5 @@
 /*
- * Weather Services
+ * Pricing Services
  */
 (function() {
   'use strict';
@@ -7,12 +7,12 @@
 
   serviceModule.factory('getPricingFactory', ['$http', '$q', function(http, $q) {
     return {
-      getPricing: function() {
+      getDivingPricing: function() {
         var deferred = $q.defer();
         var urlOffLine =  'scripts/data/pricing.json';
-        var url = "";
+        var url = "http://localhost:3000/divings";
         
-        http.get(urlOffLine).success(function(response){
+        http.get(url, headers).success(function(response){
           deferred.resolve(response);
         })
         .error(function() {
@@ -20,6 +20,48 @@
         });
         return deferred.promise;
       },
+
+      getTrainingPricing: function() {
+        var deferred = $q.defer();
+        var urlOffLine =  'scripts/data/pricing.json';
+        var url = "http://localhost:3000/trainings";
+
+        http.get(url, headers).success(function(response){
+          deferred.resolve(response);
+        })
+        .error(function() {
+          deferred.reject();
+        });
+        return deferred.promise;
+      },
+
+      getRentalPricing: function() {
+        var deferred = $q.defer();
+        var urlOffLine =  'scripts/data/pricing.json';
+        var url = "http://localhost:3000/rentals";
+
+        http.get(url, headers).success(function(response){
+          deferred.resolve(response);
+        })
+        .error(function() {
+          deferred.reject();
+        });
+        return deferred.promise;
+      },
+
+      getSpecialtiesPricing: function() {
+        var deferred = $q.defer();
+        var urlOffLine =  'scripts/data/pricing.json';
+        var url = "http://localhost:3000/specialties";
+
+        http.get(url, headers).success(function(response){
+          deferred.resolve(response);
+        })
+        .error(function() {
+          deferred.reject();
+        });
+        return deferred.promise;
+      }
     };
 
   }]);

@@ -25,3 +25,4 @@ bower_components/
 build/
 dist/
 maps/node_modules
+env.js

@@ -28,20 +28,31 @@
       <h3>
         Select the type of diving you will be doing.
       </h3>
+      
+
+
+<!-- THE BELOW DOES WORK AND SAVES JUST NEEDS TO BE STYLED -->
       <p>(check all that apply)</p>
+          <p ng-repeat="dive in reservation.diving">
+          <input checklist-model="reservation.user.selectedDiving" checklist-value="dive" type="checkbox" id="{{dive.title}}" />
+          <label for="{{dive.title}}">{{dive.title}}</label>
+          </p>
+
+
+
       <div class="row">
         <div class="col-sm-4">
           <div ng-repeat="dive in reservation.diving">
             <input style="display:none; margin: 20px" type="checkbox" id="checkbox"/>
-            <input type="checkbox" checklist-model="reservation.user.selectedDiving" checklist-value="dive"> {{dive.title}}<br>
+            <input type="checkbox" checklist-model="reservation.user.selectedDiving" checklist-value="dive"> <span class="booking-course-title">{{dive.title}}</span><br>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div ng-repeat="course in reservation.training">
-            <input type="checkbox" checklist-model="reservation.user.selectedTraining" checklist-value="course"> {{course.title}}<br>
+            <input type="checkbox" checklist-model="reservation.user.selectedTraining" checklist-value="course"><span class="booking-course-title">{{course.title}}</span><br>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-2">
         </div>
       </div>
       <!-- Date picker -->
@@ -87,6 +98,5 @@
         <input type="submit" class="btn btn-sm btn-success" ng-click="reservation.saveData()" value="Save" />
       </div>
     </form>
-    <pre>user = {{reservation.user | json}}</pre>
   </div>
 </div>
