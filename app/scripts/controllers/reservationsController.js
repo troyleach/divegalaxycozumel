@@ -5,7 +5,7 @@
   'use strict';
   var controllerModule = angular.module('myApp.controller');
 
-  controllerModule.controller('ReservationsCtrl', ['$scope', '$http', '$route', function($scope, $http, $route) {
+  controllerModule.controller('ReservationsCtrl', ['$scope', '$http', '$route', '$location', 'getPricingFactory', function($scope, $http, $route, $location, getPricingFactory) {
     var reservation = this;
 
     reservation.pageIdentifier = "Reservations";
@@ -27,23 +27,22 @@
       reservation.user.selectedDiving.push('guest');
     };
     
-    this.getTrainingInfo = function() {
-      var url = "http://localhost:3000/trainings"
-        $http.get(url).then(function(response) {
-          reservation.training = response.data
-        });
-    }
+    getPricingFactory.getDivingPricing().then(function(response) {
+      reservation.diving = response;
+    });
 
-    this.getDivingInfo = function() {
-      var url = "http://localhost:3000/divings"
-        $http.get(url).then(function(response) {
-          reservation.diving = response.data
-        });
-    }
+    getPricingFactory.getTrainingPricing().then(function(response) {
+      reservation.training = response;
+    });
 
-    this.getTrainingInfo();
-    this.getDivingInfo();
+    getPricingFactory.getRentalPricing().then(function(response) {
+      reservation.rentals = response;
+    });
 
+    getPricingFactory.getSpecialtiesPricing().then(function(response) {
+      reservation.specialties = response;
+    });
+    
     reservation.twoTank = false;
     
     reservation.reset = function() {
@@ -68,12 +67,12 @@
       };
       var url = "http://localhost:3000/users";
       //install $log = $log.log('send users information to api for creation')
-      $http.post(url, data).success(function(data, status, headers) {
+      $http.post(url, data).success(function(data, status) {
 
       }).error(function(data, status){
         //errors go here
       });
-      $route.reload();
+      $location.path('/');
     };
 
     reservation.addDiving = function(diving) {

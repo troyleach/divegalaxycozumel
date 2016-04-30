@@ -6,13 +6,12 @@
   var serviceModule = angular.module('myApp.services');
 
   serviceModule.factory('getPricingFactory', ['$http', '$q', function(http, $q) {
+    var url = "http://localhost:3000/";
     return {
       getDivingPricing: function() {
         var deferred = $q.defer();
-        var urlOffLine =  'scripts/data/pricing.json';
-        var url = "http://localhost:3000/divings";
         
-        http.get(url, headers).success(function(response){
+        http.get(url + "divings", HEADERS).success(function(response){
           deferred.resolve(response);
         })
         .error(function() {
@@ -23,10 +22,8 @@
 
       getTrainingPricing: function() {
         var deferred = $q.defer();
-        var urlOffLine =  'scripts/data/pricing.json';
-        var url = "http://localhost:3000/trainings";
 
-        http.get(url, headers).success(function(response){
+        http.get(url + "trainings", HEADERS).success(function(response){
           deferred.resolve(response);
         })
         .error(function() {
@@ -37,10 +34,8 @@
 
       getRentalPricing: function() {
         var deferred = $q.defer();
-        var urlOffLine =  'scripts/data/pricing.json';
-        var url = "http://localhost:3000/rentals";
 
-        http.get(url, headers).success(function(response){
+        http.get(url + "rentals", HEADERS).success(function(response){
           deferred.resolve(response);
         })
         .error(function() {
@@ -51,10 +46,8 @@
 
       getSpecialtiesPricing: function() {
         var deferred = $q.defer();
-        var urlOffLine =  'scripts/data/pricing.json';
-        var url = "http://localhost:3000/specialties";
 
-        http.get(url, headers).success(function(response){
+        http.get(url + "specialties", HEADERS).success(function(response){
           deferred.resolve(response);
         })
         .error(function() {
