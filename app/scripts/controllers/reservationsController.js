@@ -5,7 +5,7 @@
   'use strict';
   var controllerModule = angular.module('myApp.controller');
 
-  controllerModule.controller('ReservationsCtrl', ['$scope', '$http', '$route', '$location', 'getPricingFactory', function($scope, $http, $route, $location, getPricingFactory) {
+  controllerModule.controller('ReservationsCtrl', ['$scope', '$http', '$route', '$location', '$window', 'getPricingFactory', function($scope, $http, $route, $location, $window, getPricingFactory) {
     var reservation = this;
 
     reservation.pageIdentifier = "Reservations";
@@ -15,7 +15,6 @@
       "firstName": undefined,
       "lastName": undefined,
       "email": undefined,
-      "groupSize": undefined,
       "selectedDiving": [],
       "selectedTraining": [],
       "selectedDates": []
@@ -60,19 +59,22 @@
           "vacations_attributes": [
                                     { "dates_array": reservation.user.selectedDates,
                                       "diving_objects": reservation.user.selectedDiving,
-                                      "training_objects": reservation.user.selectedTraining
+                                      "training_objects": reservation.user.selectedTraining,
+                                      "number_of_divers": reservation.user.numberOfDivers,
+                                      "resort": reservation.user.resort
                                     }
                                   ]
         }
       };
-      var url = "http://localhost:3000/users";
+      //var url = "http://localhost:3000/users";
       //install $log = $log.log('send users information to api for creation')
-      $http.post(url, data).success(function(data, status) {
+      $http.post(URL + 'users', data).success(function(data, status) {
 
       }).error(function(data, status){
         //errors go here
       });
-      $location.path('/');
+      $window.location.href = '/';
+      //$location.href('/');
     };
 
     reservation.addDiving = function(diving) {
