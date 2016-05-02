@@ -91,6 +91,7 @@
         </div>
       </div>
 
+        <pre>{{reservation.user | json}}</pre>
       <div class="booking-buttons">
         <input type="button" class="btn btn-sm btn-danger" ng-click="reservation.reset()" value="Reset" />
 
@@ -100,7 +101,9 @@
   </div>
 </div>
 
-<div id="confirm" class="modal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+
+<!-- modal below -->
+<div id="confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

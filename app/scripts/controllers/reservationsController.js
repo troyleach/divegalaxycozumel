@@ -66,6 +66,7 @@
                                   ]
         }
       };
+      debugger;
       //var url = "http://localhost:3000/users";
       //install $log = $log.log('send users information to api for creation')
       $http.post(URL + 'users', data).success(function(data, status) {
@@ -89,7 +90,8 @@
     reservation.type = 'individual';
     
     reservation.removeFromSelected = function(dt) {
-      reservation.selectedDates.splice(reservation.selectedDates.indexOf(dt), 1);
+      reservation.user.selectedDates.splice(reservation.user.selectedDates.indexOf(dt), 1);
+
     };
 
     $scope.roles = [
