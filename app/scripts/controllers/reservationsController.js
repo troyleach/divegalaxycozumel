@@ -49,8 +49,7 @@
     };
 
     reservation.saveData = function() {
-      var data = {
-        "user": {
+      var data = { "user": {
           "first_name": reservation.user.firstName,
           "last_name": reservation.user.lastName,
           "email": reservation.user.email,
@@ -66,16 +65,15 @@
                                   ]
         }
       };
-      debugger;
+      // TODO move this into a service I have created the service I just need to hook it up :-)
       //var url = "http://localhost:3000/users";
       //install $log = $log.log('send users information to api for creation')
       $http.post(URL + 'users', data).success(function(data, status) {
-
+        $window.location.href = '/';
       }).error(function(data, status){
         //errors go here
+        console.log(status);
       });
-      $window.location.href = '/';
-      //$location.href('/');
     };
 
     reservation.addDiving = function(diving) {
