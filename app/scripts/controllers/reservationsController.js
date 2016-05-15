@@ -7,6 +7,7 @@
 
   controllerModule.controller('ReservationsCtrl', ['$scope', '$http', '$route', '$location', '$window', 'getPricingFactory', function($scope, $http, $route, $location, $window, getPricingFactory) {
     var reservation = this;
+    reservation.showSpinner = false;    
 
     reservation.pageIdentifier = "Reservations";
     reservation.panelTitle = 'Book your diving, kim@divegalaxsea.com | 52-987-112-9630';       
@@ -49,6 +50,7 @@
     };
 
     reservation.saveData = function() {
+    reservation.showSpinner = true;    
       var data = { "user": {
           "first_name": reservation.user.firstName,
           "last_name": reservation.user.lastName,
@@ -69,6 +71,7 @@
       //var url = "http://localhost:3000/users";
       //install $log = $log.log('send users information to api for creation')
       $http.post(URL + 'users', data).success(function(data, status) {
+        reservation.showSpinner = false;    
         $window.location.href = '/';
       }).error(function(data, status){
         //errors go here

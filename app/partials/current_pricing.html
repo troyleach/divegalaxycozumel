@@ -1,9 +1,12 @@
 <div id="page-container" class="shadow row">
   <div class="partial-header">
-    <div class="col-sm-9 partial-header-page-title">
+    <div class="col-sm-8 partial-header-page-title">
       {{ pricing.panelTitle }}
     </div>
-    <div class="col-sm-3 partial-header-page-identifier">
+    <div class="col-sm-2">
+      <span us-spinner="{radius:8, width:5, length: 10}" spinner-on="pricing.showSpinner"></span>
+    </div>
+    <div class="col-sm-2 partial-header-page-identifier">
       {{ pricing.pageIdentifier }}
     </div>
   </div>
@@ -14,11 +17,13 @@
           <li class="active"><a data-target="#diving" data-toggle="tab">Diving</a></li>
           <li><a data-target="#training" data-toggle="tab">Training</a></li>
           <li><a data-target="#policies" data-toggle="tab">Policies</a></li>
+          <li></li>
         </ul>
 
         <div class="tab-content tab-content-modified">
           <div class="tab-pane active row" id="diving">
             <div class="row">
+            <span us-spinner="{radius:8, width:5, length: 10}" spinner-on="pricing.showSpinner"></span>
               <div class="col-md-4">
                 <img class="typical-image" src="images/fish.jpg" alt="Kim and fish 250x333">
               </div>
@@ -47,12 +52,9 @@
                   </div>
               </div>
             </div>
-            <div class="notes col-md-12">
-              <p>* Tanks, weights, belts are included.</p>
-              <p>** Prices do not include {{pricing.park_fee | currency}} Marine Park Fee per day and tips for the crew...</p>
-            </div>
           </div>
-          
+          <p>* Tanks, weights, belts are included.</p>
+          <p>** Prices do not include {{pricing.park_fee | currency}} Marine Park Fee per day and tips for the crew...</p>
           <div class="tab-pane" id="training">
             <div class="slide-animate" ng-include="pricing.training"></div>
           </div>

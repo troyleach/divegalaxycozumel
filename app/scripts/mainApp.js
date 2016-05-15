@@ -11,7 +11,8 @@
         'ui.bootstrap',
         'gm.datepickerMultiSelect',
         'ui.mask',
-        "checklist-model"
+        "checklist-model",
+        "angularSpinner"
         ]);
 
     myApp.config(['$routeProvider', function($routeProvider) {

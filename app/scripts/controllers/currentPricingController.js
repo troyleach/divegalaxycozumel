@@ -5,8 +5,10 @@
   'use strict';
   var controllerModule = angular.module('myApp.controller');
 
-  controllerModule.controller('CurrentPricingCtrl', ['$scope', 'getPricingFactory', function($scope, getPricingFactory) {
+  controllerModule.controller('CurrentPricingCtrl', ['$scope', 'getPricingFactory', "usSpinnerService", function($scope, getPricingFactory, usSpinnerService) {
     var pricing = this;
+    pricing.showSpinner = false;    
+
 //TODO before push to prod. make sure I delete the /dist/
     pricing.pageIdentifier = "Current Pricing";
     pricing.panelTitle = 'Learn About our Scuba Dive Courses & Diving Rates';
@@ -17,6 +19,7 @@
 
 //TODO the jason that is getting returned is not to spec.. FIX
     getPricingFactory.getDivingPricing().then(function(response) {
+      pricing.showSpinner = true; 
       pricing.currentPricingDiving = response;
     });
 
@@ -29,6 +32,7 @@
     });
 
     getPricingFactory.getSpecialtiesPricing().then(function(response) {
+      pricing.showSpinner = false;    
       pricing.currentPricingSpecialties = response;
     });
 
