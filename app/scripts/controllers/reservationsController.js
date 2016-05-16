@@ -7,10 +7,10 @@
 
   controllerModule.controller('ReservationsCtrl', ['$scope', '$http', '$route', '$location', '$window', 'getPricingFactory', function($scope, $http, $route, $location, $window, getPricingFactory) {
     var reservation = this;
-    reservation.showSpinner = false;    
+    reservation.showspinner = false;    
 
     reservation.pageIdentifier = "Reservations";
-    reservation.panelTitle = 'Book your diving, kim@divegalaxsea.com | 52-987-112-9630';       
+    reservation.panelTitle = 'kim@divegalaxsea.com | 52-987-112-9630 | From the US: 011-52-1-987-112-9630';       
     reservation.checkboxModel = false; 
     reservation.user = {
       "firstName": undefined,
@@ -22,7 +22,6 @@
     };
 
     reservation.checkFirst = function() {
-      console.log('checkFirst ran');
       reservation.user.selectedDiving.splice(0, reservation.user.selectedDiving.length); 
       reservation.user.selectedDiving.push('guest');
     };
@@ -50,7 +49,7 @@
     };
 
     reservation.saveData = function() {
-    reservation.showSpinner = true;    
+      reservation.showspinner = true;    
       var data = { "user": {
           "first_name": reservation.user.firstName,
           "last_name": reservation.user.lastName,
