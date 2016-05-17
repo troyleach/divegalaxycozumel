@@ -7,7 +7,7 @@
 
   controllerModule.controller('CurrentPricingCtrl', ['$scope', 'getPricingFactory', "usSpinnerService", function($scope, getPricingFactory, usSpinnerService) {
     var pricing = this;
-    pricing.showSpinner = false;    
+    pricing.showSpinner = true;    
 
 //TODO before push to prod. make sure I delete the /dist/
     pricing.pageIdentifier = "Current Pricing";
@@ -19,7 +19,6 @@
 
 //TODO the jason that is getting returned is not to spec.. FIX
     getPricingFactory.getDivingPricing().then(function(response) {
-      pricing.showSpinner = true; 
       pricing.currentPricingDiving = response;
     });
 
