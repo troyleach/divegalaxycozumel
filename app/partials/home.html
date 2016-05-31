@@ -1,8 +1,12 @@
-
-
 <div id="home-container">
       {{ home.name_of_page }}  
     
+    <div ng-if="home.alertType">
+        <div class="alert alert-success">
+            <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{home.alertType}}</strong>{{home.alertMsg}}
+        </div>
+    </div>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -15,25 +19,25 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="images/dive_cozumel_diving_tours_excursions_cozumel_mexico.jpg" alt="...">
+        <img src="images/img7.jpg" alt="...">
         <div class="carousel-caption">
           Explore
         </div>
       </div>
       <div class="item">
-        <img src="images/scuba_diving_cozumel_dive_tour_excursion.jpg" alt="...">
+        <img src="images/img21.jpg" alt="...">
         <div class="carousel-caption">
           DISCOVER
         </div>
       </div>
       <div class="item">
-        <img src="images/scube_dive_cozumel_diving_reefs_mexico.jpg" alt="...">
+        <img src="images/img5.jpg" alt="...">
         <div class="carousel-caption">
           LEARN
         </div>
       </div>
       <div class="item">
-        <img src="images/cozumel_reefs_scuba_diving_cozumel_mexico.jpg" alt="...">
+        <img src="images/img17.jpg" alt="...">
         <div class="carousel-caption">
           Exciting
         </div>

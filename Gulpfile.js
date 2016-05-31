@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var Server = require('karma').Server;
+var imagemin = require('gulp-imagemin')
 
 require('require-dir')('./gulp');
 

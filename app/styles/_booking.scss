@@ -1,3 +1,14 @@
+.personal-information {
+    padding-bottom: 10px;
+}
+
+input.ng-invalid {
+    background-color:pink;
+}
+input.ng-valid {
+    background-color:lightgreen;
+}
+
 .date-picker-title {
   margin: 15px 0 15px 0;
 }

@@ -70,8 +70,10 @@
       //var url = "http://localhost:3000/users";
       //install $log = $log.log('send users information to api for creation')
       $http.post(URL + 'users', data).success(function(data, status) {
-        reservation.showSpinner = false;    
-        $window.location.href = '/';
+        reservation.showSpinner = false;
+          $window.localStorage.setItem('alerts', ' I have your information and I will contact you shortly.')
+          $window.localStorage.setItem('alertType', 'Success!')
+          $window.location.href = '/';
       }).error(function(data, status){
         //errors go here
         console.log(status);
