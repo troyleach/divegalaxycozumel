@@ -18,6 +18,7 @@
     pricing.policies = 'partials/pricing_partials/policies.html';
 
 //TODO the jason that is getting returned is not to spec.. FIX
+//TODO what am I doing? make this one call - in api create a serializer that all all the info that I want!
     getPricingFactory.getDivingPricing().then(function(response) {
       pricing.currentPricingDiving = response;
     });
@@ -31,10 +32,15 @@
     });
 
     getPricingFactory.getSpecialtiesPricing().then(function(response) {
-      pricing.showSpinner = false;    
-      pricing.currentPricingSpecialties = response;
+        pricing.showSpinner = false;
+        pricing.currentPricingSpecialties = response;
     });
 
+    getPricingFactory.getMiscellaneousPricing().then(function(response) {
+        pricing.showSpinner = false;
+        var currentPricingMiscellaneous = response;
+        pricing.parkFee = currentPricingMiscellaneous[0].price;
+    });
 
   }]);
 })();

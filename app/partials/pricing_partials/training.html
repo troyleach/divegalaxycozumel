@@ -1,70 +1,70 @@
 <div class="tab-pane active row" id="training">
-  <div class="">
+    <div class="col-md-12">
+            Our SSI dive courses are available across all levels and are designed to suit your needs. From first-time divers to professional divers, you will learn safety and skills under the careful care of our experienced SSI Certified Dive Instructors. We can also help certified divers to develop further skills and upgrade your certificate level.
+    </div>
     <div class="col-md-4">
-      <img class="typical-image" src="images/training.jpg" alt="Kim and students 250x333">
+        <img class="typical-image" src="images/training.jpg" alt="Kim and students 250x333">
     </div>
     <div class="col-md-8 pricing-text">
-      <p>
-        Our Cozumel dive courses are available across all levels. From absolute beginner divers to professional divers,  you will learn under the careful care of our highly skilled and experienced SSI Certified Dive Instructors. A variety of courses are available to suit your needs. As a certified diver we help you to develope your skills and adventure level, while upgrading your certificate level.
-      </p>
-      <p>
-        Our Scuba Dive Courses go beyond all other Dive Operators to ensure the most interactive, fun filled, educational, and adventure scuba diving excursion available. All while discovering the most magnificent #1 Coral Reefs right here in the Caribbean Sea of Cozumel Mexico.
-      </p>
+        <p>
+            Our training courses include online and offline access to SSI electronic training materials, including quizzes, and all necessary equipment (see below).  Our dive professionals are available via email to answer any questions you might have during your e-learning and will also conduct an academic review prior to in-person final exams. Upon successful completion of your course, you will receive your own personal e-logbook and e-certification cards.  No more forgetting your logbook and leaving your c-card in your other wallet - they travel with you on your phone, tablet, or laptop!
+        </p>
     </div>
-  </div>
-  <div class="">
+    <div class="col-md-12">
+    </div>
     <div class="col-md-8 pricing-text-left">
-      <p>
-        Our courses are offered on a private or semi-private basis, fully tailored to the most unique vacation schedules. Our goal at Dive Galaxsea is to create a competent, knowledgeable Diver. Scuba Diving in Cozumel consist of private diving instruction, rental gear, dive tanks, diving weights, BCD, Dive Regulator, Diving Mask, Dive Fins, Snorkel, wet suit (if needed), Scuba Diving Certification fees, Personal Log Book, Diving Text Book, and RDP (Dive Planner). With  Absolutely NO HIDDEN FEES. If you select to use E-Learning there will be an additional charge of $65 added to your Cozumel Open Water Course. Come Dive Cozumel and see for yourself what the excitement is about when diving with Dive GalaxSea!
-      </p>
+        <p>
+            Our dive courses go beyond all other dive operators to ensure the most comfortable, interactive, fun-filled, and safety-oriented training for both new and experienced divers. Courses are offered on a private or semi-private basis, fully tailored to your vacation schedule. Our goal is to create a competent, aware, and knowledgeable diver. Come Dive Cozumel and see for yourself what the excitement is about when diving with Dive GalaxSea!
+        </p>
     </div>
     <div class="col-md-4">
-      <img class="typical-image" src="images/teaching.jpg" alt="Kim and student 250x333">
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="panel panel-info">
-      <div class="panel-heading">Training</div>
-        <div class="panel-body">
-          <table>
-            <tr ng-repeat="train in pricing.currentPricingTraining">
-              <td class="col-description">
-                {{train.title}} 
-              </td>
-              <td class="col-price" ng-if="train.price == nil">
-                $ Contact us
-              </td>
-              <td class="col-price" ng-if="train.price != nil">
-                {{train.price | currency}}
-              </td>
-            </tr>
-          </table>
+        <img class="typical-image" src="images/teaching.jpg" alt="Kim and student 250x333">
         </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-info">
-      <div class="panel-heading">Specialties</div>
-        <div class="panel-body">
-          <table>
-            <tr ng-repeat="specialty in pricing.currentPricingSpecialties">
-              <td class="col-description">
-                {{specialty.title}} 
-              </td>
-              <td class="col-price" ng-if="specialty.price == nil">
-                $ Contact us
-              </td>
-              <td class="col-price" ng-if="specialty.price != nil">
-                {{specialty.price | currency}}
-              </td>
-            </tr>
-          </table>
+        <div class="col-md-12">
+            Necessary equipment: diving tanks, diving weights, and rental gear (buoyancy control device (BCD), regulator, mask, fins, snorkel, and a wet suit if needed).
         </div>
-      </div>
-    </div>
-  </div>
-    <p>
-      * Specialties: Prices vary and include online course materials, academic reviews, and open water dives (if required) 
-    </p>
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">Training</div>
+                <div class="panel-body">
+                    <table>
+                        <tr ng-repeat="train in pricing.currentPricingTraining">
+                            <td class="col-description">
+                                {{train.title}} 
+                            </td>
+                            <td class="col-price" ng-if="train.price == nil">
+                                $ Contact us
+                            </td>
+                            <td class="col-price" ng-if="train.price != nil">
+                                {{train.price | currency}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">Specialties</div>
+                <div class="panel-body">
+                    <table>
+                        <tr ng-repeat="specialty in pricing.currentPricingSpecialties">
+                            <td class="col-description">
+                                {{specialty.title}} 
+                            </td>
+                            <td class="col-price" ng-if="specialty.price == nil">
+                                $ Contact us
+                            </td>
+                            <td class="col-price" ng-if="specialty.price != nil">
+                                {{specialty.price | currency}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+<p>
+    * Specialties: Prices vary and include online course materials, academic reviews, and open water dives (if required) 
+</p>
 </div>

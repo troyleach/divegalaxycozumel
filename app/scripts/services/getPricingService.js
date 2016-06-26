@@ -53,7 +53,19 @@
           deferred.reject();
         });
         return deferred.promise;
-      }
+      },
+
+        getMiscellaneousPricing: function() {
+            var deferred = $q.defer();
+
+            http.get(URL + "miscellaneous_pricings", HEADERS).success(function(response){
+                deferred.resolve(response);
+            })
+                .error(function() {
+                    deferred.reject();
+                });
+            return deferred.promise;
+        }
     };
 
   }]);
