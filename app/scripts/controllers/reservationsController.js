@@ -69,10 +69,11 @@
       // TODO move this into a service I have created the service I just need to hook it up :-)
       //var url = "http://localhost:3000/users";
       //install $log = $log.log('send users information to api for creation')
+      // need to add the rental gear stuff
       $http.post(URL + 'users', data).success(function(data, status) {
         reservation.showSpinner = false;
-          $window.localStorage.setItem('alerts', ' I have your information and I will contact you shortly.')
-          $window.localStorage.setItem('alertType', 'Success!')
+          $window.localStorage.setItem('alerts', ' I have your information and I will contact you shortly.');
+          $window.localStorage.setItem('alertType', 'Success!');
           $window.location.href = '/';
       }).error(function(data, status){
         //errors go here
