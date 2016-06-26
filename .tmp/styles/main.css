@@ -39,6 +39,12 @@
   padding: 5px;
 }
 
+textarea {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -439,7 +445,7 @@
 }
 
 .picture-of-month {
-  width: 450px;
+  width: 100%;
   border: 1px solid #000;
   padding: 5px;
 }
@@ -467,6 +473,10 @@ input.ng-valid {
 
 #policies {
   padding-top: 15px;
+}
+
+.rules-image {
+  width: 100%;
 }
 
 .tab-content-modified {
@@ -557,7 +567,7 @@ input.ng-valid {
 
   .partial-header-page-title {
     text-align: center;
-    font-size: 125%;
+    font-size: 100%;
     padding: 27px 0 0 0;
   }
 
@@ -655,9 +665,18 @@ input.ng-valid {
     margin: 20px auto 0 auto;
     text-align: center;
   }
+
+  .typical-image {
+    width: 100%;
+    border: 1px solid #000;
+  }
 }
 td {
   vertical-align: top;
+}
+
+.front-page-image {
+  width: 100%;
 }
 
 /*
@@ -786,10 +805,9 @@ body {
 }
 
 .typical-image {
-  width: 250px;
+  width: 100%;
   border: 1px solid #000;
   padding: 5px;
-  margin: 15px;
 }
 
 .panel-special {
