@@ -35,18 +35,18 @@ gulp.task('partials', function () {
       spare: true,
       quotes: true
     }))
-    .pipe(gulp.dest("dist/partials"))
+    .pipe(gulp.dest("diveGalaxseaProd/partials"))
     .pipe($.size());
 });
 
 gulp.task('icons', function() {
     return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('diveGalaxseaProd/fonts'));
 });
 
 gulp.task('weatherIcons', function() {
     return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*')
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('diveGalaxseaProd/fonts'));
 });
 
 gulp.task('html', ['styles', 'scripts', 'partials'], function () {
@@ -67,7 +67,7 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
     .pipe($.useref.restore())
     .pipe($.useref())
     .pipe($.revReplace())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('diveGalaxseaProd'))
     .pipe($.size());
 });
 
@@ -78,7 +78,7 @@ gulp.task('images', function () {
       progressive: true,
       interlaced: true
     }))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('diveGalaxseaProd/images'))
     .pipe($.size());
 });
 
@@ -86,12 +86,12 @@ gulp.task('images', function () {
 //   return $.bowerFiles()
 //     .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
 //     .pipe($.flatten())
-//     .pipe(gulp.dest('dist/fonts'))
+//     .pipe(gulp.dest('diveGalaxseaProd/fonts'))
 //     .pipe($.size());
 // });
 
 gulp.task('clean', function () {
-  return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
+  return gulp.src(['.tmp', 'diveGalaxseaProd'], { read: false }).pipe($.clean());
 });
 
 gulp.task('build', ['html', 'partials', 'images', 'icons', 'weatherIcons']);

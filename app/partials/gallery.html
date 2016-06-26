@@ -8,9 +8,10 @@
     </div>
   </div>
   <div class="body-content">
-    <div class="row photo-gallery">
+    <div class="photo-gallery">
+      <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <div >
+        <div col-md-12>
            <h1>{{gallery.picOfTheMonth.title}}</h1>
            <p>"{{gallery.picOfTheMonth.description}}"</p>
            <img class="picture-of-month" src="{{gallery.picOfTheMonth.src}}" alt="Picture">
@@ -22,6 +23,8 @@
           <ng-gallery images="gallery.images"></ng-gallery>
           <small>Click a image to enlarge</small> <i class="fa fa-hand-o-up"></i>
         </div>  
+      </div>
+          
       </div>
     </div>
   </div>
