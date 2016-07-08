@@ -15,32 +15,27 @@
       <div class="row">
         <div class="col-sm-12 personal-information">
             <div class="personal-information">
-                First Name:<br>
+                First Name: <span class="validation-danger" ng-show="reservation.userInformation.confirmation_email.$invalid">(Required)</span><br />
                 <input type="text" name="firstName" ng-model="reservation.user.firstName" required />
-                <span class="validation-danger" ng-show="reservation.userInformation.firstName.$invalid">Required Field</span><br />
             </div>
             <div class="personal-information">
                 
-                Last Name:<br>
+                Last Name: <span class="validation-danger" ng-show="reservation.userInformation.confirmation_email.$invalid">(Required)</span><br />
                 <input type="text" name="lastName" ng-model="reservation.user.lastName" required/>
-                <span class="validation-danger" ng-show="reservation.userInformation.lastName.$invalid">Required Field</span><br />
             </div>
             <div class="personal-information">
-                E-mail:<br>
+                E-mail: <span class="validation-danger" ng-show="reservation.userInformation.confirmation_email.$invalid">(Required)</span><br />
                 <input type="email" name="email" ng-model="reservation.user.email" required >
-                <span class="validation-danger" ng-show="reservation.userInformation.email.$invalid">Required field</span><br />
                 <span class="validation-danger" ng-show="reservation.userInformation.email.$error.email">Invalid email address.</span><br />
             </div>
             <div class="personal-information">
-                Confirm E-mail:<br>
+                Confirm E-mail: <span class="validation-danger" ng-show="reservation.userInformation.confirmation_email.$invalid">(Required)</span><br />
                 <input type="email" name="confirmation_email" ng-model="reservation.confirmation_email" ng-pattern="reservation.user.email" required >
-                <span class="validation-danger" ng-show="reservation.userInformation.confirmation_email.$invalid">Required field</span><br />
                 <span class="validation-danger" ng-show="reservation.userInformation.confirmation_email.$error.pattern">Emails have to match!</span><br />
             </div>
             <div class="personal-information">
-                Phone Number:<br>
-                <input name="phone" ng-model="reservation.user.phone" ui-mask="{{'(999) 999-9999'}}" type="text" required />
-                <span class="validation-danger" ng-show="reservation.userInformation.phone.$invalid">Required Field</span><br />
+                Phone Number: <span class="validation-danger" ng-show="reservation.userInformation.confirmation_email.$invalid">(Required)</span><br />
+                <input type="text" ng-model="reservation.user.phone" ng-intl-tel-input required>
             </div>
             <div class="personal-information">
                 Number of Divers in your Group:<br>
