@@ -39,7 +39,7 @@
             </div>
             <div class="personal-information">
                 Phone Number:<br>
-                <input name="phone" ng-model="reservation.user.phone" ui-mask="{{'(999) 999-9999'}}" type="text" required />
+                <input type="text" ng-model="reservation.user.phone" ng-intl-tel-input required>
                 <span class="validation-danger" ng-show="reservation.userInformation.phone.$invalid">Required Field</span><br />
             </div>
             <div class="personal-information">
