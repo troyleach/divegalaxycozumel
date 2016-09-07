@@ -938,6 +938,17 @@ table {
 }
 
 /* HOME PAGE */
+/* TODO must fix this carousel ASAP, it is all messed up. i think what I need to do is make the pictrues the size i want them..also the pictrues go away on ipad no good*/
+#carousel-example-generic {
+  width: 800px;
+  height: 400px;
+}
+
+.carousel-image {
+  width: 800px;
+  height: 400px !important;
+}
+
 #home-container {
   text-align: center;
   width: 100%;
