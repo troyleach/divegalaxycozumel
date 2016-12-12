@@ -16,7 +16,14 @@
         ]);
 
     myApp.config(['$routeProvider', function($routeProvider) {
-      // Login
+      // Admin page
+      $routeProvider.when('/admin', {
+          templateUrl: 'partials/admin.html',
+          controller: 'AdminCtrl',
+          controllerAs: 'admin'
+      });
+
+      // Home Page
       $routeProvider.when('/home', {
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl',
