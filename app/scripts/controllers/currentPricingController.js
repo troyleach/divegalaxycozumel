@@ -7,7 +7,7 @@
 
   controllerModule.controller('CurrentPricingCtrl', ['$scope', 'getPricingFactory', "usSpinnerService", function($scope, getPricingFactory, usSpinnerService) {
     var pricing = this;
-    pricing.showSpinner = true;    
+    pricing.showSpinner = true;
 
 //TODO before push to prod. make sure I delete the /dist/
     pricing.pageIdentifier = "Current Pricing";

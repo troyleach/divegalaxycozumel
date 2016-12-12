@@ -1,0 +1,19 @@
+<h2 class="sub-header">Rental Gear Rates</h2>
+<table class="table table-striped" style="background-color: #e5e5e5">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th class="actions">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="price in admin.currentPricingRentals">
+      <td class="admin-col-width">{{price.title}}</td>
+      <td class="admin-col-width">{{price.description}}</td>
+      <td class="admin-price-col-width">{{price.price}}</td>
+      <td class="actions admin-action-col-width"><span class="btn btn-sm btn-primary">Edit</span> <span class="btn btn-sm btn-danger">Delete</span></td>
+    </tr>
+  </tbody>
+</table>
