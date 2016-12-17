@@ -45,7 +45,6 @@
 
       updateSpecialtiesPricing: function(data) {
         var deferred = $q.defer();
-          // TODO I hit the api however I got a preflight request error, are the headers right? I have now got it running on dev - I still get the bad token shit.
           http.patch(URL + "specialties/" + data.id, data, HEADERS).success(function(response){
           deferred.resolve(response);
         })
@@ -55,10 +54,9 @@
         return deferred.promise;
       },
 
-        updateMiscellaneousPricing: function() {
+        updateMiscellaneousPricing: function(data) {
             var deferred = $q.defer();
-
-            http.get(URL + "miscellaneous_pricings", HEADERS).success(function(response){
+            http.patch(URL + "miscellaneous_pricings/" + data.id, data, HEADERS).success(function(response){
                 deferred.resolve(response);
             })
                 .error(function() {
@@ -66,8 +64,7 @@
                 });
             return deferred.promise;
         }
+
     };
-
   }]);
-
 }).call(this);
