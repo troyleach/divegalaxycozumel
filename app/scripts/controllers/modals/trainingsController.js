@@ -5,8 +5,7 @@
   'use strict';
   var controllerModule = angular.module('myApp.controller');
 
-    controllerModule.controller('TrainingsCtrl', ['$scope', '$modalInstance', 'userForm', 'pricing', function($scope, $modalInstance, $log, userForm, pricing) {
-        $scope.form = {};
+    controllerModule.controller('TrainingsCtrl', ['$scope', '$modalInstance', 'userForm', function($scope, $modalInstance, $log, userForm) {
         $scope.pricing = $scope.stuff;
 
 

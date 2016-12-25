@@ -526,6 +526,34 @@ input.ng-valid {
   text-align: center;
 }
 
+.sidebar {
+  margin-top: 40px;
+}
+
+.actions {
+  text-align: center;
+}
+
+#single-day {
+  display: initial;
+}
+
+#rental-gear {
+  display: none;
+}
+
+.admin-col-width {
+  width: 40%;
+}
+
+.admin-price-col-width {
+  width: 5%;
+}
+
+.admin-action-col-width {
+  width: 15%;
+}
+
 /* RESPONSIVE MENU */
 @media screen and (max-width: 1100px) {
   header {
@@ -671,6 +699,10 @@ input.ng-valid {
     border: 1px solid #000;
   }
 }
+.label-title {
+  font-weight: 900;
+}
+
 td {
   vertical-align: top;
 }
@@ -938,17 +970,6 @@ table {
 }
 
 /* HOME PAGE */
-/* TODO must fix this carousel ASAP, it is all messed up. i think what I need to do is make the pictrues the size i want them..also the pictrues go away on ipad no good*/
-#carousel-example-generic {
-  width: 800px;
-  height: 400px;
-}
-
-.carousel-image {
-  width: 800px;
-  height: 400px !important;
-}
-
 #home-container {
   text-align: center;
   width: 100%;

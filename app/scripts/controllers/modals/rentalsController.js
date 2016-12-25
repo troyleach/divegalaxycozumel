@@ -5,8 +5,7 @@
   'use strict';
   var controllerModule = angular.module('myApp.controller');
 
-    controllerModule.controller('RentalsCtrl', ['$scope', '$modalInstance', 'userForm', 'pricing', function($scope, $modalInstance, $log, userForm, pricing) {
-        $scope.form = {};
+    controllerModule.controller('RentalsCtrl', ['$scope', '$modalInstance', 'userForm', function($scope, $modalInstance, $log, userForm) {
         $scope.pricing = $scope.stuff;
 
          // TODO move all the patch logic to here
@@ -24,7 +23,6 @@
         $scope.cancel = function () {
             $modalInstance.dismiss('cancel');
         };
-
 
   }]);
 })();

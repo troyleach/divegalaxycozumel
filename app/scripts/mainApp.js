@@ -20,7 +20,20 @@
       $routeProvider.when('/admin', {
           templateUrl: 'partials/admin.html',
           controller: 'AdminCtrl',
-          controllerAs: 'admin'
+          controllerAs: 'admin',
+          resolve: {
+              auth: ["$q", "AuthenticationService", "$location", function($q, AuthenticationService, $location) {
+                  var userInfo = AuthenticationService.getUserInfo();
+                  if (userInfo) {
+                      return $q.when(userInfo);
+                  } else {
+                      window.localStorage.alerts = "Not a Authorized Diver";
+                      window.localStorage.alertType = 'alert-danger';
+                      $location.path('/home');
+                      return $q.reject({ authenticated: false });
+                  }
+              }]
+          }
       });
 
       // Home Page
@@ -29,7 +42,7 @@
         controller: 'HomeCtrl',
         controllerAs: 'home'
       });
-      
+
       // Reef Map
       $routeProvider.when('/reef_map', {
         templateUrl: 'partials/reef_map.html',
@@ -70,4 +83,18 @@
         redirectTo: '/home'
       });
     }]);
+
+    myApp.run(["$rootScope", "$location", function ($rootScope, $location) {
+
+        $rootScope.$on("$routeChangeSuccess", function (userInfo) {
+            console.log(userInfo);
+        });
+
+        $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) {
+            if (eventObj.authenticated === false) {
+                $location.path("/login");
+            }
+        });
+    }]);
+
 })();
