@@ -3,7 +3,7 @@
 *.log
 *.sql
 *.sqlite
-.tmp/
+.tmp*
 *.swp
 
 # OS generated files #

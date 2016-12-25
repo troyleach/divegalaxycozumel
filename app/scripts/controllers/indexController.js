@@ -1,12 +1,14 @@
 /*
- * Index controller
+ * Index controller // I believe this is the parant controller
  */
 (function() {
   'use strict';
   var controllerModule = angular.module('myApp.controller', []);
 
-  controllerModule.controller('IndexCtrl', ['$scope', 'getWeatherFactory', function($scope, getWeatherFactory) {
+    controllerModule.controller('IndexCtrl', ['$scope', 'getWeatherFactory', '$uibModal', 'AuthenticationService', '$location', '$window',
+                                              function($scope, getWeatherFactory, $uibModal, AuthenticationService, $location, $window) {
     var index = this;
+    var userInfo;
     index.tempScale = true;
     index.tripAdvisorReview = [
       "You looking for a great, custom experience rather than a cattle boat in CZM???? Call Kim. But do it before you get there... the word will get out and she'll fill up.",
@@ -65,6 +67,12 @@
       116: '<i class="wi wi-day-cloudy"></i>',
       113: '<i class="wi wi-day-sunny"></i>'
     };
+
+    if(window.sessionStorage.userInfo){
+        this.isLoggedIn = true;
+    } else {
+        this.isLoggedIn = false;
+    }
 
     index.toggleTemperature = function(temperature) {
       if(temperature === 'farenheit') {
@@ -130,6 +138,31 @@
         var day = weekday[dateObject.getUTCDay()];
         return day;
     }
+
+    this.userLogin = function () {
+        $scope.message = "Show Form Button Clicked ONE this happens when user clicks admin login";
+        console.log($scope.message);
+
+        var modalInstance = $uibModal.open({
+            templateUrl: '/partials/modal/login.html',
+            controller: 'LoginCtrl',
+            scope: $scope
+        });
+
+        modalInstance.result.then(function (usersCredentials) {
+            var usersInfo = AuthenticationService.login(usersCredentials.useremail, usersCredentials.password);
+            $location.path('/admin');
+            window.location.reload();
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+
+   this.userLogout = function() {
+      window.sessionStorage.clear();
+      $location.path('/home');
+      window.location.reload();
+    };
 
   }]);
 })();
