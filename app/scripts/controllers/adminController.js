@@ -8,7 +8,6 @@
     controllerModule.controller('AdminCtrl', ['$scope', 'getWeatherFactory', '$window', 'getPricingFactory', 'updatePricingFactory', '$uibModal', '$log', function($scope, $window, getWeatherFactory, getPricingFactory, updatePricingFactory, $uibModal, $log) {
     var admin = this;
     this.pageIdentifier = "Admin Dashboard";
-    this.panelTitle = 'Adminstration Things';
     this.panelTitle = 'Single Day Rates';
     admin.singleDay = 'partials/edit_pricing_partials/single_day.html';
     admin.rentalGear = 'partials/edit_pricing_partials/rental_gear.html';
@@ -16,20 +15,12 @@
     admin.specialties = 'partials/edit_pricing_partials/specialties.html';
     admin.miscellaneous = 'partials/edit_pricing_partials/miscellaneous_pricings.html';
 
-        // $scope.model = {
-        //     name: 'tabs'
-        // };
-        // $scope.tabs = [
-        //     { title:'Dynamic Title 1', content:'Dynamic content 1' },
-        //     { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
-        // ];
-
         // TODO category is the thing binging passed in like specialties, need to make a generic Ctrl - line 35 the templateURL needs to changed the file name edit_rates.html
 
         $scope.editPrice = function (obj, category) {
             $scope.message = "Show Form Button Clicked";
             console.log($scope.message);
-            $scope.stuff = obj;
+            $scope.pricing_object = obj;
             $scope.category = category + 'Ctrl';
 
             var modalInstance = $uibModal.open({
@@ -39,9 +30,6 @@
                 resolve: {
                     userForm: function () {
                         return $scope.userForm;
-                    },
-                    pricing: function() {
-                        return $scope.stuff;
                     }
                 }
             });

@@ -1,9 +1,9 @@
 <div id="home-container">
-      {{ home.name_of_page }}
+    {{ home.name_of_page }}
     <div ng-if="home.alertType">
-        <div class="alert alert-success">
+        <div class="alert {{home.alertType}}">
             <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>{{home.alertType}}</strong>{{home.alertMsg}}
+            <strong>{{home.alertMsg}}</strong>
         </div>
     </div>
     <div class="picture-carousel">

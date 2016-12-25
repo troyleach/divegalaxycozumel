@@ -526,6 +526,34 @@ input.ng-valid {
   text-align: center;
 }
 
+.sidebar {
+  margin-top: 40px;
+}
+
+.actions {
+  text-align: center;
+}
+
+#single-day {
+  display: initial;
+}
+
+#rental-gear {
+  display: none;
+}
+
+.admin-col-width {
+  width: 40%;
+}
+
+.admin-price-col-width {
+  width: 5%;
+}
+
+.admin-action-col-width {
+  width: 15%;
+}
+
 /* RESPONSIVE MENU */
 @media screen and (max-width: 1100px) {
   header {
@@ -671,6 +699,10 @@ input.ng-valid {
     border: 1px solid #000;
   }
 }
+.label-title {
+  font-weight: 900;
+}
+
 td {
   vertical-align: top;
 }
