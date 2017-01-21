@@ -12,8 +12,13 @@
         'gm.datepickerMultiSelect',
         'ui.mask',
         "checklist-model",
-        "angularSpinner"
+        "angularSpinner",
+        "ngIntlTelInput"
         ]);
+
+    myApp.config(function (ngIntlTelInputProvider) {
+        ngIntlTelInputProvider.set({defaultCountry: 'us'});
+    });
 
     myApp.config(['$routeProvider', function($routeProvider) {
       // Login
