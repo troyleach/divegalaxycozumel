@@ -943,10 +943,6 @@ table {
 /*     width: 800px; */
 /*     height: 400px; */
 /* } */
-.carousel-image {
-  height: auto !important;
-}
-
 .slick-slide img {
   margin: auto;
 }
