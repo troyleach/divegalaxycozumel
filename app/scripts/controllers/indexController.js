@@ -151,6 +151,7 @@
 
         modalInstance.result.then(function (usersCredentials) {
             var usersInfo = AuthenticationService.login(usersCredentials.useremail, usersCredentials.password);
+            console.log('there i am after sign in')
             $location.path('/admin');
             window.location.reload();
         }, function () {
