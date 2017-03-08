@@ -15,12 +15,114 @@ $white-color: #fff;
 $panel-header-color: #9BCAF2;
 $page-title-font-family: 'Lobster', cursive;
 $font-family-rochester: 'Rochester', cursive;
+$danger: #f41414;
+
 @import "base";
 @import "menu";
 @import "reef_map";
 @import "gallery";
-@import "booking"
+@import "booking";
+@import "policies";
+@import "tabs";
+@import "booking";
 @import "responsive";
+
+
+td { vertical-align: top }
+
+.front-page-image {
+    width: 100%;
+}
+
+
+/*
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:19px;
+    height:19px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+input[type='checkbox']:checked {
+  background: url(images/check.png) 0 -1px no-repeat;
+  height: 16px;
+  padding: 0 0 0 18px;
+}
+*/
+// styleing for the checkboxes move this shit to it's own file!!!
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  background: $panel-body-color;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 17px; height: 17px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 3px; left: 4px;
+  font-size: 18px;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 1px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9!important;
+}
+
+// only above, stay away from shit below
 
 
 .input-xlg {
@@ -42,6 +144,38 @@ body{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: $dark-color !important; 
+    padding: 10px;
+}
+
+.validation-danger {
+    color: $danger;
+}
+
+.typical-image {
+  width: 100%;
+  border: 1px solid #000;
+  padding: 5px;
+  //margin: 15px;
+}
+
+.panel-special {
+  width: 100%;
+}
+
+.dive-button {
+  color: #fff;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4285;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
 .weather-line-margin {
@@ -99,6 +233,15 @@ table {
 
 .col {
   padding: 0 5px 0 5px;
+}
+
+.col-price {
+    padding: 5px;
+}
+
+.col-description {
+    border 1px solid #999;
+    padding: 5px;
 }
 
 .pad-top {
@@ -166,6 +309,17 @@ header {
 
 
 /* HOME PAGE */
+/* TODO must fix this carousel ASAP, it is all messed up. i think what I need to do is make the pictrues the size i want them..also the pictrues go away on ipad no good*/
+/* #carousel-example-generic { */
+/*     width: 800px; */
+/*     height: 400px; */
+/* } */
+.carousel-image {
+}
+
+.slick-slide img {
+    margin: auto;
+}
 
 #home-container {
   text-align: center;
@@ -192,7 +346,10 @@ header {
 
 // CAROUSEL 
 #carousel-example-generic {
-  width: 100%;
+  max-width: 940px;
+  margin: auto;
+  -webkit-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
 }
 
@@ -287,3 +444,29 @@ footer {
   text-align: center;
   font-size: 75%;
 }
+
+// below is stuff for my checkbox styling needs to go into it's own file
+
+input {
+    margin: 20px;
+}
+
+input[type=checkbox]:checked ~ div label{
+    background: url(http://ramyasspace.files.wordpress.com/2011/06/tick.jpg);
+    background-size: 100%;
+}
+
+label {
+    background: #ddd;
+    height: 20px;
+    width: 20px;
+    display: block;
+
+/* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to top left, #FFFFFF 0%, #C7C7C7 100%);
+
+}
+label:hover {
+
+/* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to top left, #FFFFFF 0%, #8FECFF 100%);}
