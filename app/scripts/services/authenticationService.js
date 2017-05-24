@@ -17,15 +17,13 @@
             };
 
             $http.post(URL + "login", params, HEADERS)
-                .then(function (result) {
-                    debugger;
+            .success(function (result) {
                     userInfo = {
-                        accessToken: result.data.access_token
+                        accessToken: result.access_token
                     };
                     $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
                     deferred.resolve(userInfo);
                 }, function (error) {
-                    debugger;
                     window.localStorage.alerts = "Not a Authorized Diver";
                     window.localStorage.alertType = 'alert-danger';
                     deferred.reject(error);
