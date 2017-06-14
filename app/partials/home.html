@@ -6,11 +6,8 @@
             <strong>{{home.alertMsg}}</strong>
         </div>
     </div>
-    <div class="picture-carousel">
-        <div><img class="carousel-image" src="images/img7.jpg" alt="..."></div>
-        <div><img class="carousel-image" src="images/img21.jpg" alt="..."></div>
-        <div><img class="carousel-image" src="images/img5.jpg" alt="..."></div>
-        <div><img class="carousel-image" src="images/img17.jpg" alt="..."></div>
+     <div class="picture-carousel" ng-repeat="url in carousel">
+         <div><img class="carousel-image" src="{{url}}" style="width: 500px" alt="..."></div>
     </div>
     <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
     <!-- Indicators -->
@@ -66,7 +63,14 @@
     </p>
   <hr class="style">
   </section>
-    
+
+  <section style="text-align: left">
+      <h2>Dropbox files and folders</h2>
+      <pre>
+      {{ imageUrls | json }}
+      </pre>
+  </section>
+
   <section>
     <div id="content-contrainer">
       <div class="row">
