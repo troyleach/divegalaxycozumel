@@ -703,6 +703,18 @@ input.ng-valid {
   font-weight: 900;
 }
 
+.image-background {
+  background-color: #99dbf3;
+  width: 450px;
+  height: auto;
+  margin: auto;
+}
+
+.image-background img {
+  width: 100%;
+  padding: 10px;
+}
+
 td {
   vertical-align: top;
 }
@@ -986,8 +998,8 @@ table {
 /*     width: 800px; */
 /*     height: 400px; */
 /* } */
-.slick-slide img {
-  margin: auto;
+#carousel {
+  height: 350px;
 }
 
 #home-container {
@@ -1060,6 +1072,7 @@ table {
 
 .trip-advisor-logo {
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .trip-advisor-img {
