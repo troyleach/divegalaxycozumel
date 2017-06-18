@@ -14,6 +14,7 @@
                 "You looking for a great, custom experience rather than a cattle boat in CZM???? Call Kim. But do it before you get there... the word will get out and she'll fill up.",
                 "Kim truly is a pro. I did my open water dives with her last week. She was prepared, knowledgable, reassuring, relaxed, professional, and funny. The time under and above water with her was great."
             ];
+
             index.daysOfTheWeek = [];
             index.weatherInCity = "Current Weather in Cozumel...";
 

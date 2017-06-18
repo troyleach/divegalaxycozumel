@@ -36,6 +36,7 @@
         return tempUrl;
       }
 
+
     this.alertType = window.localStorage.alertType;
     this.alertMsg = window.localStorage.alerts;
     localStorage.clear();
