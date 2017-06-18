@@ -36,6 +36,9 @@
         return tempUrl;
       }
 
+    $scope.fakeFunction = function () {
+      $scope.fake = 'this does not do anything';
+    };
 
     this.alertType = window.localStorage.alertType;
     this.alertMsg = window.localStorage.alerts;
