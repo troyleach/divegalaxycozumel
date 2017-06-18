@@ -708,6 +708,7 @@ input.ng-valid {
   width: 450px;
   height: auto;
   margin: auto;
+  overflow: hidden;
 }
 
 .image-background img {
@@ -1049,7 +1050,7 @@ table {
 /*CONTENT*/
 .content-title {
   color: #9BCAF2;
-  font-size: 140%;
+  font-size: 135%;
   padding-top: 25px;
 }
 

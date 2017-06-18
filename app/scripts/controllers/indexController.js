@@ -74,30 +74,6 @@
                 this.isLoggedIn = false;
             }
 
-            getImagesFactory.getGallery().then(function(response) {
-                var i;
-                var lgth = response.links.length;
-                var imageUrls = [];
-                for(i = 0; i < lgth; i++) {
-                    if(response.links[i][".tag"] === "file") {
-                        if(response.links[i].path_lower.search(/\bcarousel\b/) !== -1) {
-                            var tempData = modifyUrl(response.links[i]);
-                            if (tempData != null) {
-                                imageUrls.push( tempData );
-                            }
-                            $scope.carousel = imageUrls;
-                        }
-                    }
-
-                }
-            });
-
-            function modifyUrl(dbObject) {
-                var tempUrl = dbObject.url;
-                tempUrl = tempUrl.replace('dl=0', 'raw=1');
-                return tempUrl;
-            }
-
             index.toggleTemperature = function(temperature) {
                 if(temperature === 'farenheit') {
                     index.tempScale = true; 
@@ -175,100 +151,12 @@
 
                 modalInstance.result.then(function (usersCredentials) {
                     var usersInfo = AuthenticationService.login(usersCredentials.useremail, usersCredentials.password);
-                    console.log('there i am after sign in')
                     $location.path('/admin');
                     window.location.reload();
                 }, function () {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
             };
-
-            this.getAccountInfo = function() {
-                $scope.myInformation = {};
-                $http({
-                    method: "POST",
-                    url: "https://api.dropboxapi.com/2/users/get_current_account",
-                    headers: {Authorization: "Bearer TfMIrZsh-ycAAAAAAAASyoPtJgui9gy9rD3hwe1RVDF8oZsebo912nIViHCPqE_0"}
-                }).then(function mySuccess(response) {
-                    $scope.myAccount = response.data;
-                }, function myError(response) {
-                    $scope.myAccount = response.statusText;
-                });
-            };
-
-            // this.getAccountInfo();
-
-            // function getPictureOfTheMonth(dbObject) {
-            //   if(dbObject.path_lower.search(/\bpicture_of_month\b/) !== -1) {
-            //     tempUrl = dbObject.url;
-            //     tempUrl = tempUrl.replace('dl=0', 'raw=1');
-            //     return tempUrl;
-            //   }
-            // }
-
-            // function getHomeInfo(dbObject) {
-            //   if(dbObject.path_lower.search(/\bhome_information\b/) !== -1) {
-            //     tempUrl = dbObject.url;
-            //     tempUrl = tempUrl.replace('dl=0', 'raw=1');
-            //     return tempUrl;
-            //   }
-            // }
-
-            // this.getPictureOfTheMonth = function(dbObject) {
-            // };
-
-            this.getSharedLink = function() {
-                $http({
-                    method: "POST",
-                    url: "https://api.dropboxapi.com/2/sharing/list_shared_links",
-                    headers: {Authorization: "Bearer TfMIrZsh-ycAAAAAAAASyoPtJgui9gy9rD3hwe1RVDF8oZsebo912nIViHCPqE_0",
-                        'Content-Type': "application/json"}
-                }).then(function mySuccess(response) {
-                    $scope.imageUrls = {};
-                    var i, tempUrl;
-                    var picUrl = [];
-                    var homeInfo = [];
-                    var lgth = response.data.links.length;
-                    for(i = 0; i < lgth; i++) {
-                        if(response.data.links[i][".tag"] === "file") {
-                            picUrl.push( getPictureOfTheMonth(response.data.links[i]) );
-                            picUrl.push( getHomeInfo(response.data.links[i]) );
-                            $scope.imageUrls = {
-                                "pictureOfMonth": picUrl,
-                                "homeInformation": homeInfo
-                            };
-                            // tempUrl = response.data.links[i].url;
-                            // tempUrl = tempUrl.replace('dl=0', 'raw=1');
-                            // $scope.imageUrls.push(tempUrl);
-                        }
-                    }
-                    $scope.dbPayload = response.data;
-                }, function myError(response) {
-                    $scope.imagesArray = response.statusText;
-                });
-            };
-
-            // this.getSharedLink();
-
-            this.getSharedUrl = function() {
-                $http({
-                    method: "POST",
-
-                    url: "https://api.dropboxapi.com/2/files/get_metadata",
-                    headers: {Authorization: "Bearer TfMIrZsh-ycAAAAAAAASyoPtJgui9gy9rD3hwe1RVDF8oZsebo912nIViHCPqE_0",
-                        'Content-Type': "application/json"},
-                    data: {
-                        "path": 'id:jAPePYKyT5AAAAAAAAAADw',
-                        "include_media_info": true
-                    }
-                }).then(function mySuccess(response) {
-                    $scope.dbPayloadMetadata = response.data;
-                }, function myError(response) {
-                    $scope.imagesArray = response.statusText;
-                });
-            };
-
-            // this.getSharedUrl();
 
             this.userLogout = function() {
                 window.sessionStorage.clear();

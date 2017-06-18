@@ -14,7 +14,7 @@
           url: "https://api.dropboxapi.com/2/sharing/list_shared_links",
           method: "POST",
           data: "{}",
-          headers: {Authorization: "Bearer TfMIrZsh-ycAAAAAAAASyoPtJgui9gy9rD3hwe1RVDF8oZsebo912nIViHCPqE_0",
+          headers: {Authorization: "Bearer " + DB_ACCESS_TOKEN,
                     'Content-Type': "application/json"}
         }).success(function (data, status, headers, config) {
           deferred.resolve(data);

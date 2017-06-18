@@ -8,8 +8,11 @@
     </div>
 
     <section id="carousel">
-        <div class="image-background" ng-repeat="url in carousel">
-            <img class="mySlides" src="{{url}}">
+        <div class="content">
+            <div class="image-background"
+                 ng-repeat="url in carousel">
+                <img class="mySlides" ng-class="ng-cloak" src="{{url}}">
+            </div>
         </div>
     </section>
 
@@ -65,11 +68,13 @@
      var i;
      var x = document.getElementsByClassName("mySlides");
      for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";  
+         x[i].style.display = "none";
      }
+
      myIndex++;
-     if (myIndex > x.length) {myIndex = 1}    
-     x[myIndex-1].style.display = "block";  
-     setTimeout(carousel, 3000);    
+     if (myIndex > x.length) {myIndex = 1}
+     x[myIndex-1].style.display = "block";
+     setTimeout(carousel, 2000);
  }
+
 </script>
