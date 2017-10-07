@@ -9,8 +9,8 @@
 
         return {
             getUserInfo: function() {
-                console.log('below is userInfo from auth seruvce')
-                console.log(userInfo)
+                console.log('below is userInfo from auth seruvce');
+                console.log(userInfo);
                 return userInfo;
             },
 
@@ -28,7 +28,7 @@
                     userInfo = {
                       accessToken: result.data.jwt
                     };
-                    $window.sessionStorage["userInfo"] = userInfo.accessToken;
+                    $window.sessionStorage.userInfo = userInfo.accessToken;
                     deferred.resolve(userInfo);
                 }, function(error) {
                     deferred.reject(error);

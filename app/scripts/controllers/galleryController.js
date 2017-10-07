@@ -20,7 +20,7 @@
           if(response.links[i][".tag"] === "file") {
             if(response.links[i].path_lower.search(/\bgallery\b/) !== -1) {
               var tempData = getGallery(response.links[i]);
-              if (tempData != null) {
+              if (tempData !== null) {
                 imageUrls.push( tempData );
               }
               $scope.images = imageUrls;

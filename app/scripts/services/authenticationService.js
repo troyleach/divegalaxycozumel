@@ -21,7 +21,7 @@
                     userInfo = {
                         accessToken: result.access_token
                     };
-                    $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
+                    $window.sessionStorage.userInfo = JSON.stringify(userInfo);
                     deferred.resolve(userInfo);
                 }, function (error) {
                     window.localStorage.alerts = "Not a Authorized Diver";
@@ -44,7 +44,7 @@
                 }
             }).then(function (result) {
                 userInfo = null;
-                $window.sessionStorage["userInfo"] = null;
+                $window.sessionStorage.userInfo = null;
                 deferred.resolve(result);
             }, function (error) {
                 deferred.reject(error);
@@ -58,8 +58,8 @@
         }
 
         function init() {
-            if ($window.sessionStorage["userInfo"]) {
-                userInfo = JSON.parse($window.sessionStorage["userInfo"]);
+            if ($window.sessionStorage.userInfo) {
+                userInfo = JSON.parse($window.sessionStorage.userInfo);
             }
         }
 

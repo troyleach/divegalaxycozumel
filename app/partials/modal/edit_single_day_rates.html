@@ -3,17 +3,12 @@
 </div>
 <form name="form.userForm" ng-submit="submitForm()" novalidate>
     <div class="modal-body">
-
-        <!-- title -->
-            <div class="label-title">Title</div>
-            <input type="text" class="form-control" ng-model="pricing.title">
-        <!-- description we can collect this but we do not dispaly this at this time-->
-            <!-- <div class="label-title">description</div> -->
-            <!-- <input type="text" name="description" class="form-control" ng-model="pricing.description"> -->
-        <!-- price -->
-            <div class="label-title">price</div>
-            <input type="text" name="price" class="form-control" ng-model="pricing.price">
-
+        <div class="label-title">Title</div>
+        <input type="text" class="form-control" ng-model="pricing.title">
+        <div class="label-title">description</div> 
+        <input type="text" name="description" class="form-control" ng-model="pricing.description"> 
+        <div class="label-title">price</div>
+        <input type="text" name="price" class="form-control" ng-model="pricing.price">
     </div>
     <div class="modal-footer">
         <button type="submit" class="btn btn-primary" ng-disabled="form.userForm.$invalid">OK</button>
