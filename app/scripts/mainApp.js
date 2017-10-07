@@ -98,7 +98,7 @@
         $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) {
             if (eventObj.authenticated === false) {
                 // not sure what this does really
-                console.log('do I end up hre at some point')
+                console.log('Route change Error');
                 $location.path("/login");
             }
         });

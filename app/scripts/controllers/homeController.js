@@ -19,7 +19,7 @@
           if(response.links[i][".tag"] === "file") {
             if(response.links[i].path_lower.search(/\bcarousel\b/) !== -1) {
               var tempData = modifyUrl(response.links[i]);
-              if (tempData != null) {
+              if (tempData !== null) {
                 imageUrls.push( tempData );
               }
               $scope.carousel = imageUrls;
