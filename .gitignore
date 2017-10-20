@@ -26,3 +26,4 @@ build/
 dist/
 maps/node_modules
 env.js
+tags

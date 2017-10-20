@@ -34,6 +34,7 @@
     admin.training = 'partials/edit_pricing_partials/training.html';
     admin.specialties = 'partials/edit_pricing_partials/specialties.html';
     admin.miscellaneous = 'partials/edit_pricing_partials/miscellaneous_pricings.html';
+    admin.upLoadFiles = 'partials/edit_pricing_partials/fileUpLoad.html';
 
       // TODO category is the thing binging passed in like specialties, need to make a generic Ctrl
       // - line 35 the templateURL needs to changed the file name edit_rates.html
