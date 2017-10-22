@@ -41,7 +41,12 @@
         <!-- endbuild -->
 
         <script src="https://sdk.amazonaws.com/js/aws-sdk-2.19.0.min.js"></script>
-
+        <script>
+            function getHtml(template) {
+                return template.join('\n');
+            }
+            <!--listAlbums();-->
+        </script>
     </head>
     <body ng-controller="IndexCtrl as idx">
     <!-- build:js scripts/vendor.js -->
@@ -99,6 +104,7 @@
     <script src="scripts/services/deletePricingService.js"></script>
     <script src="scripts/services/authenticationService.js"></script>
     <script src="scripts/services/getImagesService.js"></script>
+    <script src="scripts/services/getAwsImagesService.js"></script>
     <script src="scripts/directives/sampleDirective.js"></script>
     <script src="scripts/filters/sampleFilter.js"></script>
     <script src="scripts/utility/constant.js"></script>

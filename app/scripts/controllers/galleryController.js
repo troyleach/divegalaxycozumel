@@ -5,12 +5,28 @@
   'use strict';
   var controllerModule = angular.module('myApp.controller');
 
-  controllerModule.controller('GalleryCtrl', ['$scope', '$document', '$http', 'getImagesFactory', function($scope, $document, $http, getImagesFactory) {
+  controllerModule.controller('GalleryCtrl', ['$scope',
+    '$document',
+    '$http',
+    'getImagesFactory',
+    'getAwsImagesFactory',
+    function(
+      $scope,
+      $document,
+      $http,
+      getImagesFactory,
+      getAwsImagesFactory) {
+
     var gallery = this;
     gallery.pageIdentifier = "Gallery";
     gallery.panelTitle = 'Explore the Underwater Galaxy of Cozumel';
 // TODO need to pull the below from the api
-    gallery.picOfTheMonth = { src: "images/img15.jpg", title: "Picture of the Month", description: "Contrats to Judi", user: "Troy Leach" };
+      gallery.picOfTheMonth = {
+        src: "images/img15.jpg",
+        title: "Picture of the Month",
+        description: "Contrats to Judi",
+        user: "Troy Leach" 
+      };
 
       getImagesFactory.getGallery().then(function(response) {
         var i;
@@ -34,7 +50,115 @@
         }
       });
 
+      //function getImages() {
+        //var path = 'pictureOfMonth'
+            //AWS.config.update({
+                //"accessKeyId": AWS_ACCESS_KEY,
+                //"secretAccessKey": AWS_SECRET_ACCESS_KEY,
+                //"region": AWS_REGION
+            //});
+            //var s3 = new AWS.S3();
+            //var params = {
+                //Bucket: 'divegalaxsea/' + path,
+                //Key: file.name,
+                //ContentType: file.type,
+                //Body: file,
+                //ACL: 'public-read'
+            //};        
+            //s3.getObject(params, function (err, res) {
+                //if (err) {
+                    //results.innerHTML = ("Error uploading data: ", err);
+                //} else {
+                    //results.innerHTML = ("Successfully uploaded data");
+                //}
+            //});
+      //}
+      //pictureOfMonth
+      function viewAlbum(albumName) {
+        //AWS.config.update({
+          //region: bucketRegion,
+          //credentials: new AWS.CognitoIdentityCredentials({
+            //IdentityPoolId: IdentityPoolId
+          //})
+        //});
 
+        //below is from my other controller that works
+        AWS.config.update({
+            "accessKeyId": AWS_ACCESS_KEY,
+            "secretAccessKey": AWS_SECRET_ACCESS_KEY,
+            "region": AWS_REGION
+        });
+        var s3 = new AWS.S3();
+        //var params = {
+            //Bucket: 'divegalaxsea/' + path,
+            //Key: file.name,
+            //ContentType: file.type,
+            //Body: file,
+            //ACL: 'public-read'
+        //};        
+        var albumBucketName = 'divegalaxsea';
+        var bucketRegion = 'AWS_REGION';
+        //var IdentityPoolId = 'IDENTITY_POOL_ID';
+
+        var s3 = new AWS.S3({
+          apiVersion: '2006-03-01',
+          params: {Bucket: albumBucketName}
+        });
+
+        var albumPhotosKey = encodeURIComponent(albumName) + '/';
+        s3.listObjects({Prefix: albumPhotosKey}, function(err, data) {
+          if (err) {
+            return alert('There was an error viewing your album: ' + err.message);
+          }
+          // `this` references the AWS.Response instance that represents the response
+          var href = this.request.httpRequest.endpoint.href;
+          var bucketUrl = href + albumBucketName + '/';
+
+          var photos = data.Contents.map(function(photo) {
+            var photoKey = photo.Key;
+            var photoUrl = bucketUrl + encodeURIComponent(photoKey);
+            return getHtml([
+              '<span>',
+              '<div>',
+              '<img style="width:128px;height:128px;" src="' + photoUrl + '"/>',
+              '</div>',
+              '<div>',
+              '<span onclick="deletePhoto(\'' + albumName + "','" + photoKey + '\')">',
+              'X',
+              '</span>',
+              '<span>',
+              photoKey.replace(albumPhotosKey, ''),
+              '</span>',
+              '</div>',
+              '<span>',
+            ]);
+          });
+          var message = photos.length ?
+            '<p>Click on the X to delete the photo</p>' :
+            '<p>You do not have any photos in this album. Please add photos.</p>';
+          var htmlTemplate = [
+            '<h2>',
+            'Album: ' + albumName,
+            '</h2>',
+            message,
+            '<div>',
+            getHtml(photos),
+            '</div>',
+            '<input id="photoupload" type="file" accept="image/*">',
+            '<button id="addphoto" onclick="addPhoto(\'' + albumName +'\')">',
+            'Add Photo',
+            '</button>',
+            '<button onclick="listAlbums()">',
+            'Back To Albums',
+            '</button>',      
+          ]
+          document.getElementById('picOfMonth').innerHTML = getHtml(htmlTemplate);
+        });
+      }
+
+      viewAlbum('pictureCarousel');
+
+//TODO below is old
     function getGallery(dbObject) {
       var urlObject = {};
       var tempUrl = dbObject.url;
