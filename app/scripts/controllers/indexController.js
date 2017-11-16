@@ -5,10 +5,34 @@
     'use strict';
     var controllerModule = angular.module('myApp.controller', []);
 
-    controllerModule.controller('IndexCtrl', ['$scope', 'getWeatherFactory', '$uibModal', 'AuthenticationService', '$location', '$window', '$http', 'getImagesFactory',
-        function($scope, getWeatherFactory, $uibModal, AuthenticationService, $location, $window, $http, getImagesFactory) {
+  controllerModule.controller('IndexCtrl', [
+    '$scope',
+    'getWeatherFactory',
+    '$uibModal',
+    'AuthenticationService',
+    '$location',
+    '$window',
+    '$http',
+    'getImagesFactory',
+    'getAwsImagesFactory',
+    function(
+      $scope,
+      getWeatherFactory,
+      $uibModal,
+      AuthenticationService,
+      $location,
+      $window,
+      $http,
+      getImagesFactory,
+      getAwsImagesFactory) {
             var index = this;
             var userInfo;
+
+          getAwsImagesFactory.getAWSGallery('pictureCarousel')
+            .then(function(response) {
+               index.carousel = response;
+            });
+
             index.tempScale = true;
             index.tripAdvisorReview = [
                 "You looking for a great, custom experience rather than a cattle boat in CZM???? Call Kim. But do it before you get there... the word will get out and she'll fill up.",

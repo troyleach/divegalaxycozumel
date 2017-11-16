@@ -10,13 +10,11 @@
     <section id="carousel">
         <div class="content">
             <div class="image-background"
-                 ng-repeat="url in carousel">
-                <img class="mySlides" ng-class="ng-cloak" src="{{url}}">
+                 ng-repeat="url in newCarousel">
+                <img class="mySlides" ng-class="ng-cloak" src="{{url.img}}">
             </div>
         </div>
     </section>
-
-
 
     <section id="about">
         <p class="about-title">Explore the Mystical Underwater World of Cozumel with Dive GalaxSea</p>
