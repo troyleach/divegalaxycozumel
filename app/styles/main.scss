@@ -347,16 +347,24 @@ header {
 }
 
 // CAROUSEL 
-#carousel-example-generic {
-  max-width: 940px;
+.carousel-img {
   margin: auto;
-  -webkit-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+}
+.carousel-wrapper {
+  height: 400px;
+
+}
+
+#carousel-example-generic {
+  max-width: 500px;
+  margin: auto;
+  //-webkit-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+  //-moz-box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+  //box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
 }
 
 .item {
-  width: 940px !important;
+  //width: 940px !important;
 }
 
 .carousel-caption {

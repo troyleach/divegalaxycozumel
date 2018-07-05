@@ -9,9 +9,10 @@
     this.pageIdentifier = "Home";
     this.panelTitle = 'Explore the Mystical Underwater World of Cozumel with Dive GalaxSea';
     $scope.caseData = false;
-
+    $scope.showDiver = true;
 
       getImagesFactory.getGallery().then(function(response) {
+        $scope.showDiver = false;
         var i;
         var lgth = response.links.length;
         var imageUrls = [];
@@ -25,7 +26,6 @@
               $scope.carousel = imageUrls;
             }
           }
-
         }
         $scope.caseData = true;
       });
@@ -35,10 +35,6 @@
         tempUrl = tempUrl.replace('dl=0', 'raw=1');
         return tempUrl;
       }
-
-    $scope.fakeFunction = function () {
-      $scope.fake = 'this does not do anything';
-    };
 
     this.alertType = window.localStorage.alertType;
     this.alertMsg = window.localStorage.alerts;

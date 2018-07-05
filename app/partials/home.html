@@ -7,16 +7,30 @@
         </div>
     </div>
 
-    <section id="carousel">
-        <div class="content">
-            <div class="image-background"
-                 ng-repeat="url in carousel">
-                <img class="mySlides" ng-class="ng-cloak" src="{{url}}">
+    <section>
+        <span ng-if="showDiver" style="z-index: 10002" >
+            <img src="./images/diver-animation-bubbles.gif" alt="Bubbles">
+        </span>
+        <div class="carousel-wrapper">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div ng-repeat="url in carousel" ng-class="{'active': $first}" class="item">
+                        <img class="carousel-img" src="{{url}}" alt="...">
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-
 
     <section id="about">
         <p class="about-title">Explore the Mystical Underwater World of Cozumel with Dive GalaxSea</p>
@@ -59,22 +73,3 @@
         </div>
     </section>
 </div><!-- END OF HOME CONTAINER  -->
-
-<script>
- var myIndex = 0;
- carousel();
-
- function carousel() {
-     var i;
-     var x = document.getElementsByClassName("mySlides");
-     for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";
-     }
-
-     myIndex++;
-     if (myIndex > x.length) {myIndex = 1}
-     x[myIndex-1].style.display = "block";
-     setTimeout(carousel, 2000);
- }
-
-</script>

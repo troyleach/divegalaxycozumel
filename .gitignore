@@ -3,8 +3,8 @@
 *.log
 *.sql
 *.sqlite
-.tmp/**
 *.swp
+.tmp/**/*
 
 # OS generated files #
 ######################
