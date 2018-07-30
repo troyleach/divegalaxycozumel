@@ -9,6 +9,7 @@
         function($scope, getWeatherFactory, $uibModal, AuthenticationService, $location, $window, $http, getImagesFactory) {
             var index = this;
             var userInfo;
+            index.date = new Date();
             index.tempScale = true;
             index.tripAdvisorReview = [
                 "You looking for a great, custom experience rather than a cattle boat in CZM???? Call Kim. But do it before you get there... the word will get out and she'll fill up.",
@@ -83,36 +84,54 @@
                 }
             }; 
 
+          $.getJSON(DARK_SKY_KEY, function(data) {
+            console.log('fucker face', data)
+              $scope.currentTemp = data.temperature;
+              $scope.feelsLike = data.apparentTemperature;
+              $scope.summary = data.summary;
+              $scope.humidity = data.humidity;
+              $scope.windSpeed = data.windSpeed;
+          });
+
             getWeatherFactory.getWeather().then(function(response) {
-                var fiveDayWeather = response.data.weather;
-
-                for(var i = 0; i < fiveDayWeather.length; i++ ) {
-                    index.daysOfTheWeek.push({
-                        date: fiveDayWeather[i].date,
-                        weekDay: getWeekDay(fiveDayWeather[i].date),
-                        maxtempC: fiveDayWeather[i].maxtempC,
-                        maxtempF: fiveDayWeather[i].maxtempF,
-                        mintempC: fiveDayWeather[i].mintempC,
-                        mintempF: fiveDayWeather[i].mintempF,
-                        weatherCode: getWeatherIcon(fiveDayWeather[i].hourly[3].weatherCode) 
-                    });
-                }
-                index.currentWeather = index.daysOfTheWeek.splice(0, 1);
-                return index.daysOfTheWeek;
+              var currentWeather = response.data.currently;
+              $scope.currentTemp = currentWeather.temperature;
+              $scope.feelsLike = currentWeather.apparentTemperature;
+              $scope.summary = currentWeather.summary;
+              $scope.humidity = currentWeather.humidity;
+              $scope.windSpeed = currentWeather.windSpeed;
             });
 
-            getWeatherFactory.getMarineWeather().then(function(response) {
-                var marineData = response.data.weather[0].hourly[3];
-                index.marineWeather = {
-                    humidity: marineData.humidity,
-                    waterTempC: marineData.waterTemp_C,
-                    waterTempF: marineData.waterTemp_F,
-                    weatherDesc: marineData.weatherDesc[0].value,
-                    windDir: marineData.winddir16Point,
-                    windSpeed: marineData.windspeedMiles
-                };
-                return index.marineWeather;
-            });
+            //getWeatherFactory.getWeather().then(function(response) {
+                //var fiveDayWeather = response.data.weather;
+
+                //for(var i = 0; i < fiveDayWeather.length; i++ ) {
+                    //index.daysOfTheWeek.push({
+                        //date: fiveDayWeather[i].date,
+                        //weekDay: getWeekDay(fiveDayWeather[i].date),
+                        //maxtempC: fiveDayWeather[i].maxtempC,
+                        //maxtempF: fiveDayWeather[i].maxtempF,
+                        //mintempC: fiveDayWeather[i].mintempC,
+                        //mintempF: fiveDayWeather[i].mintempF,
+                        //weatherCode: getWeatherIcon(fiveDayWeather[i].hourly[3].weatherCode) 
+                    //});
+                //}
+                //index.currentWeather = index.daysOfTheWeek.splice(0, 1);
+                //return index.daysOfTheWeek;
+            //});
+
+            //getWeatherFactory.getMarineWeather().then(function(response) {
+                //var marineData = response.data.weather[0].hourly[3];
+                //index.marineWeather = {
+                    //humidity: marineData.humidity,
+                    //waterTempC: marineData.waterTemp_C,
+                    //waterTempF: marineData.waterTemp_F,
+                    //weatherDesc: marineData.weatherDesc[0].value,
+                    //windDir: marineData.winddir16Point,
+                    //windSpeed: marineData.windspeedMiles
+                //};
+                //return index.marineWeather;
+            //});
 
             function getWeatherIcon(weatherDescNum) {
                 var weatherIcon; 
