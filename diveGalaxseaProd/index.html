@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="styles/vendor-12a30512.css">
 
-        <link rel="stylesheet" href="styles/main-780eff9c.css">
+        <link rel="stylesheet" href="styles/main-c500cf5e.css">
         <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -33,7 +33,7 @@
 
     
     <!-- Any include make it between the build comments below -->
-    <script src="scripts/main-66afc1df.js"></script>
+    <script src="scripts/main-eaf05ebd.js"></script>
 
     <script data-require="ui-bootstrap@*" data-semver="0.14.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.1.min.js"></script>
     <script>
@@ -112,19 +112,24 @@
                 </div>
 
                 <div id="weather" class="col-md-4">
-                  <p class="left-it footer-col-title">{{idx.weatherInCity}}
-                    <button ng-click="idx.toggleTemperature('farenheit')" ng-class="idx.tempScale ? 'btn btn-info btn-sm' : 'btn btn-default btn-sm'"><i class="wi wi-fahrenheit degree-scale"></i></button>
-                    <button type="button" ng-model="celsius" ng-click="idx.toggleTemperature('celsius')" ng-class="idx.tempScale ? 'btn btn-default btn-sm' : 'btn btn-info btn-sm'"><i class="wi wi-celsius degree-scale"></i></button>
-                  </p>
-                  <div ng-if="idx.tempScale">
-                    <div ng-include="'partials/farenheit.html'"></div>
-                  </div>
-                  <div ng-if="!idx.tempScale">
-                      <div ng-include="'partials/celsius.html'"></div>
-                  </div>
+                    <p class="left-it footer-col-title">{{idx.weatherInCity}}
+                        <!--
+                        <button ng-click="idx.toggleTemperature('farenheit')" ng-class="idx.tempScale ? 'btn btn-info btn-sm' : 'btn btn-default btn-sm'"><i class="wi wi-fahrenheit degree-scale"></i></button>
+                        <button type="button" ng-model="celsius" ng-click="idx.toggleTemperature('celsius')" ng-class="idx.tempScale ? 'btn btn-default btn-sm' : 'btn btn-info btn-sm'"><i class="wi wi-celsius degree-scale"></i></button>
+                        -->
+                    </p>
+                    <div ng-if="idx.tempScale">
+                        <div ng-include="'partials/farenheit.html'"></div>
+                    </div>
+                    <div ng-if="!idx.tempScale">
+                        <div ng-include="'partials/celsius.html'"></div>
+                    </div>
                 </div>
 
                 <div id="social" class="col-md-4">
+                  <div class="footer-col-title">
+                    <p>Socail Media...</p>
+                  </div>
                   <div class="row ssi-nitrox-logos">
                     <div class="col-md-8">
                       <a href="http://www.divessi.com/">
@@ -148,6 +153,9 @@
                       &nbsp;&nbsp;&nbsp;Twitter
                     </a>
                     <hr class="general-line-brake">
+                  </div>
+                  <div class='w3-center'>
+                      <img src="./images/adopt-a-dive-site.png" alt="Adopt a Dive Site" style="height: 200px">
                   </div>
                   <div class="email-us">
                     <p>Have a quick question?</p>
@@ -246,5 +254,6 @@
 
       </script>
 
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js'></script>
     </body>
 </html>
