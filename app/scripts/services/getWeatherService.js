@@ -20,7 +20,7 @@
       getWeather: function() {
         var latitude = 20.4230;
         var longitude = -86.9223;
-        var url = DARK_SKY_KEY + DARK_SKY_API_KEY + '/' + latitude + ',' + longitude
+        var url = DARK_SKY_KEY + DARK_SKY_API_KEY + '/' + latitude + ',' + longitude;
         var deferred = $q.defer();
 
         $http.get(url).success(function(response){

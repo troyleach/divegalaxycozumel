@@ -65,7 +65,7 @@
             var i = 1;
 
             for(i; i < fiveDayWeather.length; i++ ) {
-              var date = new Date(fiveDayWeather[i].time * 1000)
+              var date = new Date(fiveDayWeather[i].time * 1000);
               index.daysOfTheWeek.push({
                 date: days[date.getDay()],
                 weekDay: getWeekDay(fiveDayWeather[i].date),
