@@ -183,8 +183,10 @@
 
                 <div id="weather" class="col-md-4">
                     <p class="left-it footer-col-title">{{idx.weatherInCity}}
+                        <!--
                         <button ng-click="idx.toggleTemperature('farenheit')" ng-class="idx.tempScale ? 'btn btn-info btn-sm' : 'btn btn-default btn-sm'"><i class="wi wi-fahrenheit degree-scale"></i></button>
                         <button type="button" ng-model="celsius" ng-click="idx.toggleTemperature('celsius')" ng-class="idx.tempScale ? 'btn btn-default btn-sm' : 'btn btn-info btn-sm'"><i class="wi wi-celsius degree-scale"></i></button>
+                        -->
                     </p>
                     <div ng-if="idx.tempScale">
                         <div ng-include="'partials/farenheit.html'"></div>
@@ -192,12 +194,12 @@
                     <div ng-if="!idx.tempScale">
                         <div ng-include="'partials/celsius.html'"></div>
                     </div>
-                    <div>
-                        <img src="./images/adopt-a-dive-site.png" alt="Adopt a Dive Site" style="height: 200px">
-                    </div>
                 </div>
 
                 <div id="social" class="col-md-4">
+                  <div class="footer-col-title">
+                    <p>Socail Media...</p>
+                  </div>
                   <div class="row ssi-nitrox-logos">
                     <div class="col-md-8">
                       <a href="http://www.divessi.com/">
@@ -221,6 +223,9 @@
                       &nbsp;&nbsp;&nbsp;Twitter
                     </a>
                     <hr class="general-line-brake">
+                  </div>
+                  <div class='w3-center'>
+                      <img src="./images/adopt-a-dive-site.png" alt="Adopt a Dive Site" style="height: 200px">
                   </div>
                   <div class="email-us">
                     <p>Have a quick question?</p>
@@ -319,5 +324,6 @@
 
       </script>
 
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js'></script>
     </body>
 </html>

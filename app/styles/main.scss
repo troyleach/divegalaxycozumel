@@ -202,6 +202,11 @@ body{
   font-size: 80%;
 }
 
+.next-week-weather-summary {
+  text-align: justify;
+
+}
+
 .current-weather-celsius,
 .current-weather-farenheit {
   font-size: 95%;
@@ -217,7 +222,7 @@ body{
 
 .weather-icon-small {
   color: #f3c56e;
-  font-size: 40px;
+  font-size: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
   text-shadow: 1px 1px 5px #fcf3e2;
@@ -422,12 +427,12 @@ footer {
 }
 
 #weather {
-  text-align: center;
+  //text-align: center;
   margin-bottom: 15px;
 }
 
 #social {
-  padding: 15px;
+  margin-bottom: 15px;
 }
 
 .nitrox-logo {

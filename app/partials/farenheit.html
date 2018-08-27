@@ -1,65 +1,94 @@
-<div class="row">
-<div class="col-md-8">
-  <p class="left-it">
-    {{ idx.date | date: 'fullDate' }}<br>
-    Humidity: {{humidity}}%<br>
-    Temperature: {{ currentTemp }}<br>
-    Feels Like: {{ feelsLike }}<br>
-    Wind Speed: {{windSpeed}}<br>
-  </p>
+<div class="w3-row">
+    <div class="w3-col s8">
+        {{ idx.date | date: 'fullDate' }}
+    </div>
+    <div class="w3-col s4 w3-center">
+        <canvas id="weatherIcon" width="32" height="32"></canvas>
+    </div>
+    <!--TODO have to deal with time zone-->
+    <div class="w3-row">
+        <div class="w3-col s4">
+            Current time:
+        </div>
+        <div class="w3-col s8">
+            {{currentWeather.currently.time * 1000 | date: 'shortTime' }}
+        </div>
+    </div>
+    <div class="w3-row">
+        <div class="w3-col s4">
+            Humidity:
+        </div>
+        <div class="w3-col s8">
+            {{ currentWeather.currently.humidity * 100}}%
+        </div>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-col s4">
+            Temperature:
+        </div>
+        <div class="w3-col s8">
+            {{ currentWeather.currently.temperature | number: 0 }}&#8457;
+        </div>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-col s4">
+            Feels Like:
+        </div>
+        <div class="w3-col s8">
+            {{ currentWeather.currently.apparentTemperature | number: 0 }}&#8457;
+        </div>
+    </div>
+
+
+    <div class="w3-row">
+        <div class="w3-col s4">
+            Wind Speed:
+        </div>
+        <div class="w3-col s8">
+            {{ currentWeather.currently.windSpeed }}
+        </div>
+    </div>
 </div>
-<div class="col-md-4">
-  <table>
-    <tr class="">
-      <td class="col">
-      {{idx.currentWeather[0].maxtempF}}&#8457;</td>
-    </tr>
-    <tr class="">
-      <td class="col" ><p class="weather-icon-big" ng-bind-html="idx.currentWeather[0].weatherCode"></p></td>
-    </tr>
-    <tr class="">
-      <td class="col">
-      {{idx.currentWeather[0].mintempF}}&#8457;</td>
-    </tr>
-  </table>
-</div> 
-</div>
+
+<br>
 
 <hr class="style weather-line-margin">
 <!--TODO this does not work at the momment there is now a logo in this spot-->
-<div class="weeks-weather row">
-  <div class="col-md-12">
-    <table>
-      <tr>
-        <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
-          {{day.weekDay}}
-        </td>
-      </tr>
-      <tr>
-        <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
-          <div class="weather-text">
-            {{day.maxtempF}}&#8457; 
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
-          <div class="weather-text">
-            <p class="weather-icon-small" ng-bind-html="day.weatherCode"></p>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
-          <div class="weather-text">
-            {{day.mintempF}}&#8457;
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
+<div class="weeks-weather w3-row">
+    <div class="w3-col s12">
+        <table>
+            <tr>
+                <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
+                    {{ day.date | date: 'EEE' }}
+                </td>
+            </tr>
+            <tr>
+                <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
+                    <div class="weather-text">
+                        {{ day.maxtempF | number: 0 }}&#8457; 
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
+                    <div class="weather-text">
+                        <p class="weather-icon-small" ng-bind-html="idx.weatherDescMap[day.icon]"></p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col" ng-repeat='day in idx.daysOfTheWeek'>
+                    <div class="weather-text">
+                        {{ day.mintempF | number: 0 }}&#8457;
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
-
+<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
 
 
 

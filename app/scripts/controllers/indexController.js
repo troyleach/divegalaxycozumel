@@ -18,56 +18,27 @@
 
             index.daysOfTheWeek = [];
             index.weatherInCity = "Current Weather in Cozumel...";
+            var days = [
+              'Sun',
+              'Mon',
+              'Tues',
+              'Wed',
+              'Thurs',
+              'Fri',
+              'Sat'
+            ];
 
             index.weatherDescMap = {
-                395: '<i class="wi wi-snow"></i>',
-                392: '<i class="wi wi-snow"></i>',
-                389: '<i class="wi wi-thunderstorm"></i>',
-                386: '<i class="wi wi-thunderstorm"></i>',
-                377: '<i class="wi wi-showers"></i>',
-                374: '<i class="wi wi-showers"></i>',
-                371: '<i class="wi wi-snow"></i>',
-                368: '<i class="wi wi-snow"></i>',
-                365: '<i class="wi wi-sleet"></i>',
-                362: '<i class="wi wi-sleet"></i>',
-                359: '<i class="wi wi-thunderstorm"></i>',
-                356: '<i class="wi wi-thunderstorm"></i>',
-                353: '<i class="wi wi-showers"></i>',
-                350: '<i class="wi wi-snow"></i>',
-                338: '<i class="wi wi-snow"></i>',
-                335: '<i class="wi wi-snow"></i>',
-                332: '<i class="wi wi-snow"></i>',
-                329: '<i class="wi wi-snow"></i>',
-                326: '<i class="wi wi-snow"></i>',
-                323: '<i class="wi wi-snow"></i>',
-                320: '<i class="wi wi-sleet"></i>',
-                317: '<i class="wi wi-sleet"></i>',
-                314: '<i class="wi wi-day-showers"></i>',
-                311: '<i class="wi wi-day-showers"></i>',
-                308: '<i class="wi wi-storm-showers"></i>',
-                305: '<i class="wi wi-day-showers"></i>',
-                302: '<i class="wi wi-day-showers"></i>',
-                299: '<i class="wi wi-day-showers"></i>',
-                296: '<i class="wi wi-day-showers"></i>',
-                293: '<i class="wi wi-day-showers"></i>',
-                284: '<i class="wi wi-sleet"></i>',
-                281: '<i class="wi wi-sleet"></i>',
-                266: '<i class="wi wi-sleet"></i>',
-                263: '<i class="wi wi-sleet"></i>',
-                260: '<i class="wi wi-day-fog"></i>',
-                248: '<i class="wi wi-fog"></i>',
-                230: '<i class="wi wi-day-snow-wind"></i>',
-                227: '<i class="wi wi-day-snow-wind"></i>',
-                200: '<i class="wi wi-thunderstorm"></i>',
-                185: '<i class="wi wi-day-sleet"></i>',
-                182: '<i class="wi wi-day-sleet"></i>',
-                179: '<i class="wi wi-snow"></i>',
-                176: '<i class="wi wi-showers"></i>',
-                143: '<i class="wi wi-day-sleet"></i>',
-                122: '<i class="wi wi-cloudy"></i>',
-                119: '<i class="wi wi-cloudy"></i>',
-                116: '<i class="wi wi-day-cloudy"></i>',
-                113: '<i class="wi wi-day-sunny"></i>'
+                "clear-day": '<i class="wi wi-day-sunny"></i>',
+                "clear-night": '<i class="wi wi-night-clear"></i>',
+                "snow": '<i class="wi wi-snow"></i>',
+                "rain": '<i class="wi wi-thunderstorm"></i>',
+                "fog": '<i class="wi wi-fog"></i>',
+                "cloudy": '<i class="wi wi-cloudy"></i>',
+                "wind": '<i class="wi wi-day-windy"></i>',
+                "sleet": '<i class="wi wi-sleet"></i>',
+                "partly-cloudy-night": '<i class="wi wi-night-partly-cloudy"></i>',
+                "partly-cloudy-day": '<i class="wi wi-day-cloudy"></i>'
             };
 
             if(window.sessionStorage.userInfo){
@@ -84,66 +55,34 @@
                 }
             }; 
 
-          $.getJSON(DARK_SKY_KEY, function(data) {
-            console.log('fucker face', data)
-              $scope.currentTemp = data.temperature;
-              $scope.feelsLike = data.apparentTemperature;
-              $scope.summary = data.summary;
-              $scope.humidity = data.humidity;
-              $scope.windSpeed = data.windSpeed;
+          // When in dev use this code until I can get this fixed. also
+          // skycon will not work with a dev payload.
+          //getWeatherFactory.devGetWeather().then(function(response) {
+          getWeatherFactory.getWeather().then(function(response) {
+            $scope.currentWeather = response;
+            var icons = new Skycons({"color": "#999"});
+            var fiveDayWeather = response.daily.data;
+            var i = 1;
+
+            for(i; i < fiveDayWeather.length; i++ ) {
+              var date = new Date(fiveDayWeather[i].time * 1000)
+              index.daysOfTheWeek.push({
+                date: days[date.getDay()],
+                weekDay: getWeekDay(fiveDayWeather[i].date),
+                maxtempC: fiveDayWeather[i].maxtempC,
+                maxtempF: fiveDayWeather[i].temperatureHigh,
+                mintempC: fiveDayWeather[i].mintempC,
+                mintempF: fiveDayWeather[i].temperatureLow,
+                icon: fiveDayWeather[i].icon 
+              });
+            }
+            icons.set("weatherIcon", $scope.currentWeather.currently.icon);
+            icons.play();
           });
 
-            getWeatherFactory.getWeather().then(function(response) {
-              var currentWeather = response.data.currently;
-              $scope.currentTemp = currentWeather.temperature;
-              $scope.feelsLike = currentWeather.apparentTemperature;
-              $scope.summary = currentWeather.summary;
-              $scope.humidity = currentWeather.humidity;
-              $scope.windSpeed = currentWeather.windSpeed;
-            });
-
-            //getWeatherFactory.getWeather().then(function(response) {
-                //var fiveDayWeather = response.data.weather;
-
-                //for(var i = 0; i < fiveDayWeather.length; i++ ) {
-                    //index.daysOfTheWeek.push({
-                        //date: fiveDayWeather[i].date,
-                        //weekDay: getWeekDay(fiveDayWeather[i].date),
-                        //maxtempC: fiveDayWeather[i].maxtempC,
-                        //maxtempF: fiveDayWeather[i].maxtempF,
-                        //mintempC: fiveDayWeather[i].mintempC,
-                        //mintempF: fiveDayWeather[i].mintempF,
-                        //weatherCode: getWeatherIcon(fiveDayWeather[i].hourly[3].weatherCode) 
-                    //});
-                //}
-                //index.currentWeather = index.daysOfTheWeek.splice(0, 1);
-                //return index.daysOfTheWeek;
-            //});
-
-            //getWeatherFactory.getMarineWeather().then(function(response) {
-                //var marineData = response.data.weather[0].hourly[3];
-                //index.marineWeather = {
-                    //humidity: marineData.humidity,
-                    //waterTempC: marineData.waterTemp_C,
-                    //waterTempF: marineData.waterTemp_F,
-                    //weatherDesc: marineData.weatherDesc[0].value,
-                    //windDir: marineData.winddir16Point,
-                    //windSpeed: marineData.windspeedMiles
-                //};
-                //return index.marineWeather;
-            //});
-
-            function getWeatherIcon(weatherDescNum) {
-                var weatherIcon; 
-                angular.forEach(index.weatherDescMap, function(value, key) {
-                    if(key == weatherDescNum) {
-                        weatherIcon = value; 
-                    }
-                });
-                return weatherIcon;
-            }
 
             function getWeekDay(dateString) {
+              //TODO I can use the days array above on line 21
                 var dateObject = new Date(dateString);
                 var weekday = [
                     "Sun",
@@ -183,7 +122,6 @@
                 $location.path('/home');
                 window.location.reload();
             };
-
 
         }]);
 })();

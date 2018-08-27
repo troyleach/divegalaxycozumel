@@ -26,6 +26,7 @@
     "gulp-util": "^3.0.7",
     "http-proxy": "~1.11.1",
     "jshint-stylish": "^0.1.5",
+    "request": "^2.87.0",
     "require-dir": "1.0.0",
     "uglify-save-license": "^0.4.1",
     "wiredep": "^1.4.3"
